@@ -10,8 +10,11 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -24,6 +27,7 @@ public class TestBase  {
 	public static WebDriver driver;
 	public static Properties prop;
 	public  static EventFiringWebDriver e_driver;
+	Logger log = Logger.getLogger(TestBase.class);
 	
 	
 	
@@ -64,25 +68,24 @@ public class TestBase  {
 		driver.get(prop.getProperty("url"));
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
+	public void click(By locator){
+		try {
+			WebElement element;
+			driver.findElement(locator).click();
+		}catch (Exception e){
+			log.info (e.getStackTrace());
+			assert false;
+		}
+	}
+
+	public void click(WebElement webElement){
+		try {
+			WebElement element;
+			driver.findElement((By) webElement).click();
+		}catch (Exception e){
+			log.info (e.getStackTrace());
+			assert false;
+		}
+	}
 }
-
-
-
-
-
-
-	
-	
-
-	
-
-	

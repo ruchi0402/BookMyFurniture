@@ -27,7 +27,10 @@ public ItemSelectPage() {
 	}
 	
 	public void ClickonProduct(String  name) {
-		driver.findElement(By.xpath("//b[contains(text(),'"+name+"')]")).click();	
+	By nameOne = By.xpath("//b[contains(text(),'"+name+"')]");
+	click(nameOne);
+
+//		driver.findElement(nameOne).click();
 		
 	}
 	

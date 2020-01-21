@@ -53,9 +53,9 @@ public class LoginPage extends TestBase {
 		return driver.findElement(By.xpath("//div[@id='toast-container']")).isDisplayed();
 	}
 	
-	public void  clickCreateAccount() {		
+	public void  clickCreateAccount() {
 		if(createAccount.isDisplayed()||createAccount.isEnabled())
-			createAccount.click();
+			click(createAccount);
 					
 	}
 	

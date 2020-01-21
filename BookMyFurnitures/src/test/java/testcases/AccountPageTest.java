@@ -21,17 +21,12 @@ import org.apache.log4j.Logger;
 
 public class AccountPageTest extends TestBase  {
 
-	
-	
 	String sheetName="AccountData";
 	Logger log = Logger.getLogger(AccountPageTest.class);
-	
-	
+
 	public AccountPageTest() {
 		super();
 	}
-	
-
 
 	@BeforeMethod	
 	public void setup() {
@@ -41,61 +36,53 @@ public class AccountPageTest extends TestBase  {
 		log.info("****************************** CreateAccountTest *****************************************");	
 			
 			
-		}
+	}
 
 	@DataProvider
-	public Object[][] getAccountData()throws Exception 
-	{
+	public Object[][] getAccountData()throws Exception {
 		Object data[][]=TestUtil.getTestData(sheetName);
 		return data;
 	}
 	
 	@Test (priority=1, dataProvider="getAccountData")
-        public void createAccountTest(String name, String mobile, String email, String password) {	
-		try
-		{
+	public void createAccountTest(String name, String mobile, String email, String password) {
+		try {
 			HomePage homePage=new HomePage();	
 			homePage.clickSignIn();
 			LoginPage loginPage=new LoginPage();
 			loginPage.clickCreateAccount();
 			AccountPage accountpage=new AccountPage();
-		    
-		
-		accountpage.createAccount(name, mobile, email, password);	
-		Assert.assertTrue(accountpage.accountSuccessful());
+			accountpage.createAccount(name, mobile, email, password);
+			Assert.assertTrue(accountpage.accountSuccessful());
 		
 		}
 		catch (Exception e) {
-			 log.error(e.getMessage());
-			  throw(e);
+			log.error(e.getMessage());
+			throw(e);
 		    
 		}
-
-		
 					
 	}
 	@AfterMethod
 	public void tearDown(ITestResult result){
-	if(ITestResult.FAILURE==result.getStatus())
-	{
-		try {
-			TestUtil.takeScreenshotAtEndOfTest();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(ITestResult.FAILURE==result.getStatus())
+		{
+			try {
+				TestUtil.takeScreenshotAtEndOfTest();
+			} catch (IOException e) {
+				e.printStackTrace();
 			
+			}
 		}
-	}
 	
-	else if (ITestResult.SUCCESS==result.getStatus())
-	{
-		try {
-			TestUtil.takeScreenshotAtEndOfTest();
-		} catch (IOException e) {
-			e.printStackTrace();
+		else if (ITestResult.SUCCESS==result.getStatus())
+		{
+			try {
+				TestUtil.takeScreenshotAtEndOfTest();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 		driver.quit();
 	}
-
 }
-
