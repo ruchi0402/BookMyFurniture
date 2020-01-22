@@ -16,9 +16,10 @@ public class OrderDetailsPage extends BasePage {
 
 	@FindBy(xpath = "//button[contains(text(),'Place Order')]")
 	private WebElement placeOrder;
-	
-	@FindBy(xpath="//span[contains(text(),'Yes')]")
+
+	@FindBy(xpath = "//span[contains(text(),'Yes')]")
 	private WebElement Yes;
+
 	public OrderDetailsPage() {
 
 		PageFactory.initElements(driver, this);

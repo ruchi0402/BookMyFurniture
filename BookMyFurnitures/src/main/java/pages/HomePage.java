@@ -44,28 +44,36 @@ public class HomePage extends BasePage {
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
+
 	// Actions:
 	public String validateHomePageTitle() {
 		return driver.getTitle();
 	}
+
 	public boolean ValidateLogoImage() {
 		return logo.isDisplayed();
 	}
+
 	public void viewWishList() {
 		click(wishList);
 	}
+
 	public void viewCart() {
 		click(cart);
 	}
+
 	public void clickonSupport() {
 		click(supportLink);
 	}
+
 	public void clickSignIn() {
-		click(signInLink);	
+		click(signInLink);
 	}
+
 	public void viewAllFurnitures() {
 		click(allFurnituresbutton);
 	}
+
 	public void clickBookNow() {
 		click(bookNowBTN);
 	}

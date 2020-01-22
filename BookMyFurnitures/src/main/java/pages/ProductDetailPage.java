@@ -17,10 +17,12 @@ public class ProductDetailPage extends BasePage {
 
 		PageFactory.initElements(driver, this);
 	}
+
 	public Boolean getProductDetail(String itemdetail) {
 		return driver.findElement(By.xpath("//div[@class='float-left']//h1[contains(text(),'" + itemdetail + "')]"))
-		.isDisplayed();
+				.isDisplayed();
 	}
+
 	public void clickBuyNow() {
 		// if(signInLink.isDisplayed()||signInLink.isEnabled())
 		click(buyNow);

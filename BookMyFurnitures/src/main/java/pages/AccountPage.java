@@ -24,20 +24,22 @@ public class AccountPage extends BasePage {
 
 	@FindBy(xpath = "//button[contains(text(),'Register')]")
 	private WebElement registerButton;
-	
-	@FindBy(xpath="//div[@id='toast-container']")
+
+	@FindBy(xpath = "//div[@id='toast-container']")
 	private WebElement accountSucessful;
 
 	public AccountPage() {
 		PageFactory.initElements(driver, this);
 	}
+
 	public void createAccount(String name, String mobile, String emailAddress, String Password) {
-		sendKeys(custname,name);
-		sendKeys(mobileNo,mobile);
-		sendKeys(email,emailAddress);
-		sendKeys(password,Password);
+		sendKeys(custname, name);
+		sendKeys(mobileNo, mobile);
+		sendKeys(email, emailAddress);
+		sendKeys(password, Password);
 		click(registerButton);
 	}
+
 	public Boolean accountSuccessful() {
 		return accountSucessful.isDisplayed();
 	}

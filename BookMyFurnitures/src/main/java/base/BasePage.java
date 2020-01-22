@@ -18,7 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-public class BasePage  {
+public class BasePage {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static EventFiringWebDriver e_driver;
@@ -58,13 +58,14 @@ public class BasePage  {
 		driver.get(prop.getProperty("url"));
 
 	}
+
 //method overloading
 	public void click(By locator) {
 		try {
-		driver.findElement(locator).click();
+			driver.findElement(locator).click();
 		} catch (Exception e) {
 			log.error(e.getMessage());
-			throw(e);
+			throw (e);
 		}
 	}
 
@@ -76,7 +77,8 @@ public class BasePage  {
 			assert false;
 		}
 	}
-	public void sendKeys(WebElement webElement,String name) {
+
+	public void sendKeys(WebElement webElement, String name) {
 		try {
 			webElement.sendKeys(name);
 		} catch (Exception e) {
@@ -84,7 +86,5 @@ public class BasePage  {
 			assert false;
 		}
 	}
-	
-	
-	
+
 }

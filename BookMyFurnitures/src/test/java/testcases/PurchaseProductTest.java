@@ -28,18 +28,18 @@ public class PurchaseProductTest extends BasePage {
 	public PurchaseProductTest() {
 		super();
 	}
-
+	
 	@BeforeMethod
 	public void setup() {
 		instatiateBrowser();
 	}
-
+	
 	@DataProvider
 	public Object[][] getProductData() throws Exception {
 		Object data[][] = TestUtil.getTestData(sheetName);
 		return data;
 	}
-
+	
 	@Test(priority = 1, dataProvider = "getProductData")
 	public void VerifyPurchaseProductTest(String username, String password, String Category, String Item,
 			String Payment) {
@@ -77,10 +77,8 @@ public class PurchaseProductTest extends BasePage {
 				TestUtil.takeScreenshotAtEndOfTest();
 			} catch (IOException e) {
 				e.printStackTrace();
-
 			}
 		}
-
 		else if (ITestResult.SUCCESS == result.getStatus()) {
 			try {
 				TestUtil.takeScreenshotAtEndOfTest();

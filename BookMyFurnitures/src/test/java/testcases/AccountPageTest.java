@@ -6,22 +6,19 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import base.BasePage;
 import pages.AccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 import util.TestUtil;
-
 import java.io.IOException;
-
 import org.apache.log4j.Logger;
 
 public class AccountPageTest extends BasePage {
 
 	String sheetName = "AccountData";
 	Logger log = Logger.getLogger(AccountPageTest.class);
-
+	
 	public AccountPageTest() {
 		super();
 	}
@@ -30,8 +27,7 @@ public class AccountPageTest extends BasePage {
 	public void setup() {
 
 		instatiateBrowser();
-		log.info("****************************** starting test case *****************************************");
-		log.info("****************************** CreateAccountTest *****************************************");
+
 	}
 
 	@DataProvider
@@ -41,7 +37,11 @@ public class AccountPageTest extends BasePage {
 	}
 
 	@Test(priority = 1, dataProvider = "getAccountData")
+
 	public void createAccountTest(String name, String mobile, String email, String password) {
+		log.info("****************************** starting test case *****************************************");
+		log.info("****************************** CreateAccountTest *****************************************");
+		
 		try {
 			HomePage homePage = new HomePage();
 			LoginPage loginPage = new LoginPage();

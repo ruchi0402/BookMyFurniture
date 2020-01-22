@@ -27,7 +27,7 @@ public class LoginPage extends BasePage {
 
 	@FindBy(xpath = "//button[@class='btn btn-primary btn-md']")
 	private WebElement createAccount;
-	
+
 	@FindBy(xpath = "//div[@id='toast-container']")
 	private WebElement loginSuccessful;
 
@@ -37,10 +37,11 @@ public class LoginPage extends BasePage {
 	}
 
 	public void logIntoAccount(String emailAddress, String loginpassword) {
-		sendKeys(email,emailAddress);
-		sendKeys(password,loginpassword);
+		sendKeys(email, emailAddress);
+		sendKeys(password, loginpassword);
 		click(signInButton);
 	}
+
 	public Boolean getSignInPagetext() {
 		return signInpagetext.isDisplayed();
 	}
