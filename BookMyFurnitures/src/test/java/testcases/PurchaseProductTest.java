@@ -70,7 +70,6 @@ public class PurchaseProductTest extends BasePage {
 			throw (e);
 		}
 	}
-
 	@AfterMethod
 	public void tearDown(ITestResult result) {
 		if (ITestResult.FAILURE == result.getStatus()) {

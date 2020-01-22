@@ -27,6 +27,9 @@ public class LoginPage extends BasePage {
 
 	@FindBy(xpath = "//button[@class='btn btn-primary btn-md']")
 	private WebElement createAccount;
+	
+	@FindBy(xpath = "//div[@id='toast-container']")
+	private WebElement loginSuccessful;
 
 	public LoginPage() {
 
@@ -34,18 +37,16 @@ public class LoginPage extends BasePage {
 	}
 
 	public void logIntoAccount(String emailAddress, String loginpassword) {
-		email.sendKeys(emailAddress);
-		password.sendKeys(loginpassword);
+		sendKeys(email,emailAddress);
+		sendKeys(password,loginpassword);
 		click(signInButton);
-
 	}
-
 	public Boolean getSignInPagetext() {
 		return signInpagetext.isDisplayed();
 	}
 
 	public Boolean loginSuccessful() {
-		return driver.findElement(By.xpath("//div[@id='toast-container']")).isDisplayed();
+		return loginSuccessful.isDisplayed();
 	}
 
 	public void clickCreateAccount() {

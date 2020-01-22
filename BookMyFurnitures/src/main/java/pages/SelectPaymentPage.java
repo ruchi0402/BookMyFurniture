@@ -20,13 +20,19 @@ public class SelectPaymentPage extends BasePage {
 
 	@FindBy(xpath = "//button[@class='btn btn-success ng-star-inserted']")
 	private WebElement placeorder;
+	
+	@FindBy(xpath="//h2[contains(text(),'Your order is successfully placed')]")
+	private WebElement orderSuccessful;
+	
+	@FindBy(xpath="//h3[contains(text(),'Select Payment Option')]")
+	private WebElement selectPaymentText;
 
 	public SelectPaymentPage() {
 		PageFactory.initElements(driver, this);
 	}
 
 	public Boolean verifySelectPaymentPage() {
-		return driver.findElement(By.xpath("//h3[contains(text(),'Select Payment Option')]")).isDisplayed();
+		return selectPaymentText.isDisplayed();
 	}
 
 	public void selectPaymenttype(String payment) {
@@ -45,6 +51,6 @@ public class SelectPaymentPage extends BasePage {
 	}
 	public Boolean OrderSuccessful() {
 	
-		return driver.findElement(By.xpath("//h2[contains(text(),'Your order is successfully placed')]")).isDisplayed();
+		return orderSuccessful.isDisplayed();
 	}
 }

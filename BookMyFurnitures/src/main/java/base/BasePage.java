@@ -76,4 +76,15 @@ public class BasePage  {
 			assert false;
 		}
 	}
+	public void sendKeys(WebElement webElement,String name) {
+		try {
+			webElement.sendKeys(name);
+		} catch (Exception e) {
+			log.error(e.getStackTrace());
+			assert false;
+		}
+	}
+	
+	
+	
 }

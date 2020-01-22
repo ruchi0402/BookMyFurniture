@@ -53,7 +53,6 @@ public class HomePageTest extends BasePage {
 			log.error("Test Case Failed", e);
 			throw (e);
 		}
-
 	}
 
 	@Test(priority = 3)
@@ -63,7 +62,6 @@ public class HomePageTest extends BasePage {
 		homePage.clickSignIn();
 		LoginPage loginPage = new LoginPage();
 		Assert.assertTrue(loginPage.getSignInPagetext());
-
 	}
 
 	@AfterMethod
@@ -73,7 +71,6 @@ public class HomePageTest extends BasePage {
 				TestUtil.takeScreenshotAtEndOfTest();
 			} catch (IOException e) {
 				e.printStackTrace();
-
 			}
 		}
 
