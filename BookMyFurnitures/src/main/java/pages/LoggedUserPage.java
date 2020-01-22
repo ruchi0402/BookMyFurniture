@@ -7,49 +7,40 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.TestBase;
+import base.BasePage;
 
-public class LoggedUserPage extends TestBase {
-	
-	@FindBy(xpath="//div[@id='toast-container']")
+public class LoggedUserPage extends BasePage {
+
+	@FindBy(xpath = "//div[@id='toast-container']")
 	private WebElement loggedIn;
-	
-	@FindBy(xpath="//div[@class='circle-text-chair']")
-	private WebElement chair;
-	
-	@FindBy(xpath="//div[@class='circle-text-sofa']")
-	private WebElement sofa;
-	
-	@FindBy(xpath="//div[@class='circle-text-table']")
-	private WebElement table;
-	
 
-	@FindBy(xpath="")
+	@FindBy(xpath = "//div[@class='circle-text-chair']")
+	private WebElement chair;
+
+	@FindBy(xpath = "//div[@class='circle-text-sofa']")
+	private WebElement sofa;
+
+	@FindBy(xpath = "//div[@class='circle-text-table']")
+	private WebElement table;
+
+	@FindBy(xpath = "")
 	private WebElement bed;
-	
-	
-	public String verifyLoginPageUrl(){
+
+	public String verifyLoginPageUrl() {
 		return driver.getCurrentUrl();
-		
+
 	}
 
-	public Boolean verifyUserLoggedIn()
-	{
+	public Boolean verifyUserLoggedIn() {
 		return loggedIn.isDisplayed();
 	}
-	
+
 	public LoggedUserPage() {
 		PageFactory.initElements(driver, this);
 	}
-	
 
-	
-	public void ClickOnCategory(String category ) {
-		driver.findElement(By.xpath("//div[@class='circle-text-"+category+"']")).click();	
-		
-	
+	public void ClickOnCategory(String category) {
+		driver.findElement(By.xpath("//div[@class='circle-text-" + category + "']")).click();
 
-			
-		
 	}
 }

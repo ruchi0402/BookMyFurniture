@@ -14,26 +14,23 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import base.TestBase;
+import base.BasePage;
 
-public class TestUtil extends TestBase {
-	
+public class TestUtil extends BasePage {
+
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
-	
+
 	public static String TESTDATA_SHEET_PATH = "C:\\Users\\Admin\\Desktop\\SDET\\BookMyFurnitures\\src\\main\\java\\testdata\\Datasheet.xls";
 
 	static Workbook book;
 	static Sheet sheet;
-	
-	public static void takeScreenshotAtEndOfTest() throws IOException  {
+
+	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
 	}
-
-
-
 
 	public static Object[][] getTestData(String sheetName) throws InvalidFormatException {
 		FileInputStream file = null;
@@ -54,15 +51,10 @@ public class TestUtil extends TestBase {
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
 				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
-				 System.out.println(data[i][k]);
+				System.out.println(data[i][k]);
 			}
 		}
 		return data;
 	}
-
-
-	
-	
-
 
 }

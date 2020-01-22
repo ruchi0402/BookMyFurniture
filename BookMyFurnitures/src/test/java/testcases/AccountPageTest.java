@@ -1,7 +1,5 @@
 package testcases;
 
-
-
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -9,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import base.TestBase;
+import base.BasePage;
 import pages.AccountPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -19,64 +17,58 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-public class AccountPageTest extends TestBase  {
+public class AccountPageTest extends BasePage {
 
-	String sheetName="AccountData";
+	String sheetName = "AccountData";
 	Logger log = Logger.getLogger(AccountPageTest.class);
 
 	public AccountPageTest() {
 		super();
 	}
 
-	@BeforeMethod	
+	@BeforeMethod
 	public void setup() {
-		
+
 		instatiateBrowser();
 		log.info("****************************** starting test case *****************************************");
-		log.info("****************************** CreateAccountTest *****************************************");	
-			
-			
+		log.info("****************************** CreateAccountTest *****************************************");
 	}
 
 	@DataProvider
-	public Object[][] getAccountData()throws Exception {
-		Object data[][]=TestUtil.getTestData(sheetName);
+	public Object[][] getAccountData() throws Exception {
+		Object data[][] = TestUtil.getTestData(sheetName);
 		return data;
 	}
-	
-	@Test (priority=1, dataProvider="getAccountData")
+
+	@Test(priority = 1, dataProvider = "getAccountData")
 	public void createAccountTest(String name, String mobile, String email, String password) {
 		try {
-			HomePage homePage=new HomePage();	
+			HomePage homePage = new HomePage();
 			homePage.clickSignIn();
-			LoginPage loginPage=new LoginPage();
+			LoginPage loginPage = new LoginPage();
 			loginPage.clickCreateAccount();
-			AccountPage accountpage=new AccountPage();
+			AccountPage accountpage = new AccountPage();
 			accountpage.createAccount(name, mobile, email, password);
 			Assert.assertTrue(accountpage.accountSuccessful());
-		
-		}
-		catch (Exception e) {
+
+		} catch (Exception e) {
 			log.error(e.getMessage());
-			throw(e);
-		    
+			throw (e);
 		}
-					
 	}
+
 	@AfterMethod
-	public void tearDown(ITestResult result){
-		if(ITestResult.FAILURE==result.getStatus())
-		{
+	public void tearDown(ITestResult result) {
+		if (ITestResult.FAILURE == result.getStatus()) {
 			try {
 				TestUtil.takeScreenshotAtEndOfTest();
 			} catch (IOException e) {
 				e.printStackTrace();
-			
+
 			}
 		}
-	
-		else if (ITestResult.SUCCESS==result.getStatus())
-		{
+
+		else if (ITestResult.SUCCESS == result.getStatus()) {
 			try {
 				TestUtil.takeScreenshotAtEndOfTest();
 			} catch (IOException e) {
