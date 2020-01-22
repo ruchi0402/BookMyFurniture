@@ -44,13 +44,12 @@ public class AccountPageTest extends BasePage {
 	public void createAccountTest(String name, String mobile, String email, String password) {
 		try {
 			HomePage homePage = new HomePage();
-			homePage.clickSignIn();
 			LoginPage loginPage = new LoginPage();
-			loginPage.clickCreateAccount();
 			AccountPage accountpage = new AccountPage();
+			homePage.clickSignIn();
+			loginPage.clickCreateAccount();
 			accountpage.createAccount(name, mobile, email, password);
 			Assert.assertTrue(accountpage.accountSuccessful());
-
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			throw (e);
@@ -64,11 +63,8 @@ public class AccountPageTest extends BasePage {
 				TestUtil.takeScreenshotAtEndOfTest();
 			} catch (IOException e) {
 				e.printStackTrace();
-
 			}
-		}
-
-		else if (ITestResult.SUCCESS == result.getStatus()) {
+		} else if (ITestResult.SUCCESS == result.getStatus()) {
 			try {
 				TestUtil.takeScreenshotAtEndOfTest();
 			} catch (IOException e) {

@@ -25,12 +25,9 @@ public class ItemSelectPage extends BasePage {
 
 	}
 
-	public void ClickonProduct(String name) {
-		By nameOne = By.xpath("//b[contains(text(),'" + name + "')]");
-		click(nameOne);
-
-//		driver.findElement(nameOne).click();
-
+	public void ClickonProduct(String product) {
+		By productname = By.xpath("//b[contains(text(),'" + product + "')]");
+		click(productname);
 	}
 
 }

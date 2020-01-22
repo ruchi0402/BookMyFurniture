@@ -28,7 +28,6 @@ public class LoggedUserPage extends BasePage {
 
 	public String verifyLoginPageUrl() {
 		return driver.getCurrentUrl();
-
 	}
 
 	public Boolean verifyUserLoggedIn() {
@@ -40,7 +39,7 @@ public class LoggedUserPage extends BasePage {
 	}
 
 	public void ClickOnCategory(String category) {
-		driver.findElement(By.xpath("//div[@class='circle-text-" + category + "']")).click();
-
+		By categoryname = By.xpath("//div[@class='circle-text-" + category + "']");
+		click(categoryname);
 	}
 }

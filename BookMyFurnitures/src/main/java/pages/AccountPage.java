@@ -26,22 +26,16 @@ public class AccountPage extends BasePage {
 	private WebElement registerButton;
 
 	public AccountPage() {
-
 		PageFactory.initElements(driver, this);
-
 	}
-
 	public void createAccount(String name, String mobile, String emailAddress, String Password) {
 		custname.sendKeys(name);
 		mobileNo.sendKeys(mobile);
 		email.sendKeys(emailAddress);
 		password.sendKeys(Password);
-		registerButton.submit();
-
+		click(registerButton);
 	}
-
 	public Boolean accountSuccessful() {
 		return driver.findElement(By.xpath("//div[@id='toast-container']")).isDisplayed();
 	}
-
 }

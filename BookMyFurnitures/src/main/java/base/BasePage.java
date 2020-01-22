@@ -18,7 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-public class BasePage extends CommonConstant {
+public class BasePage  {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static EventFiringWebDriver e_driver;
@@ -28,7 +28,7 @@ public class BasePage extends CommonConstant {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
-					"C:\\Users\\Admin\\Desktop\\SDET\\BookMyFurnitures\\src\\main\\java\\config\\config.properties");
+					"C:\\Users\\sdetlabs\\Desktop\\Ruchita-SDET\\BookMyFurniture\\BookMyFurnitures\\src\\main\\java\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class BasePage extends CommonConstant {
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\Admin\\Desktop\\SDET\\BookMyFurnitures\\src\\main\\resources\\chromedriver.exe");
+					"C:\\Users\\sdetlabs\\Desktop\\Ruchita-SDET\\BookMyFurniture\\BookMyFurnitures\\src\\main\\resources\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "user.dir" + "\\src\\main\\resources\\geckodriver.exe");
@@ -58,23 +58,21 @@ public class BasePage extends CommonConstant {
 		driver.get(prop.getProperty("url"));
 
 	}
-
+//method overloading
 	public void click(By locator) {
 		try {
-			// WebElement locator;
-			driver.findElement(locator).click();
+		driver.findElement(locator).click();
 		} catch (Exception e) {
-			log.info(e.getStackTrace());
-			assert false;
+			log.error(e.getMessage());
+			throw(e);
 		}
 	}
 
 	public void click(WebElement webElement) {
 		try {
-			// WebElement webElement1;
-			driver.findElement((By) webElement).click();
+			webElement.click();
 		} catch (Exception e) {
-			log.info(e.getStackTrace());
+			log.error(e.getStackTrace());
 			assert false;
 		}
 	}

@@ -36,7 +36,7 @@ public class LoginPage extends BasePage {
 	public void logIntoAccount(String emailAddress, String loginpassword) {
 		email.sendKeys(emailAddress);
 		password.sendKeys(loginpassword);
-		signInButton.submit();
+		click(signInButton);
 
 	}
 
@@ -49,8 +49,7 @@ public class LoginPage extends BasePage {
 	}
 
 	public void clickCreateAccount() {
-		if (createAccount.isDisplayed() || createAccount.isEnabled())
-			click(createAccount);
+		click(createAccount);
 
 	}
 

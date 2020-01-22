@@ -45,23 +45,22 @@ public class PurchaseProductTest extends BasePage {
 			String Payment) {
 		try {
 			HomePage homePage = new HomePage();
-			homePage.clickSignIn();
 			LoginPage loginPage = new LoginPage();
+			LoggedUserPage logininuser = new LoggedUserPage();
+			ItemSelectPage itemselect = new ItemSelectPage();
+			ProductDetailPage productdetail = new ProductDetailPage();
+			OrderDetailsPage orderdetail = new OrderDetailsPage();
+			SelectPaymentPage selectpayment = new SelectPaymentPage();
+			homePage.clickSignIn();
 			loginPage.logIntoAccount(username, password);
 			Assert.assertTrue(loginPage.loginSuccessful());
-			LoggedUserPage logininuser = new LoggedUserPage();
-			logininuser = new LoggedUserPage();
 			logininuser.ClickOnCategory(Category);
-			ItemSelectPage itemselect = new ItemSelectPage();
 			Assert.assertTrue(itemselect.itemSelectPage());
 			itemselect.ClickonProduct(Item);
-			ProductDetailPage productdetail = new ProductDetailPage();
 			Assert.assertTrue(productdetail.getProductDetail(Item));
 			productdetail.clickBuyNow();
-			OrderDetailsPage orderdetail = new OrderDetailsPage();
 			Assert.assertTrue(orderdetail.orderDetailPage(Item));
 			orderdetail.clickonPlaceOrder();
-			SelectPaymentPage selectpayment = new SelectPaymentPage();
 			Assert.assertTrue(selectpayment.verifySelectPaymentPage());
 			selectpayment.selectPaymenttype(Payment);
 			selectpayment.clickonPlaceOrder();

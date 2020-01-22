@@ -38,9 +38,8 @@ public class LoginPageTest extends BasePage {
 	@Test(priority = 1)
 	public void getSignInPagetext() {
 		HomePage homePage = new HomePage();
-		homePage.clickSignIn();
 		LoginPage loginPage = new LoginPage();
-
+		homePage.clickSignIn();
 		Assert.assertTrue(loginPage.getSignInPagetext());
 	}
 
@@ -48,8 +47,8 @@ public class LoginPageTest extends BasePage {
 	public void logIntoAccount(String username, String password) {
 
 		HomePage homePage = new HomePage();
-		homePage.clickSignIn();
 		LoginPage loginPage = new LoginPage();
+		homePage.clickSignIn();
 		loginPage.logIntoAccount(username, password);
 		Assert.assertTrue(loginPage.loginSuccessful());
 

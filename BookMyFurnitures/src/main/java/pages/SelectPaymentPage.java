@@ -22,40 +22,29 @@ public class SelectPaymentPage extends BasePage {
 	private WebElement placeorder;
 
 	public SelectPaymentPage() {
-
 		PageFactory.initElements(driver, this);
 	}
 
 	public Boolean verifySelectPaymentPage() {
 		return driver.findElement(By.xpath("//h3[contains(text(),'Select Payment Option')]")).isDisplayed();
-
 	}
 
 	public void selectPaymenttype(String payment) {
 		if (payment.equals("card")) {
-			creditdebitatmradiobutton.click();
+			click(creditdebitatmradiobutton);
 		}
-
 		else if (payment.equals("cash")) {
-			cash.click();
-
+			click(cash);
 		}
-
 		else if (payment.equals("cash")) {
-			netbanking.click();
-
+			click(netbanking);
 		}
-
 	}
-
 	public void clickonPlaceOrder() {
-		placeorder.click();
-
+		click(placeorder);
 	}
-
-	public Boolean OrderSuccessful()
-
-	{
+	public Boolean OrderSuccessful() {
+	
 		return driver.findElement(By.xpath("//h2[contains(text(),'Your order is successfully placed')]")).isDisplayed();
 	}
 }

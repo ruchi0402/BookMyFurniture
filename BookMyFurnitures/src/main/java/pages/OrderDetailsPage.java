@@ -16,7 +16,9 @@ public class OrderDetailsPage extends BasePage {
 
 	@FindBy(xpath = "//button[contains(text(),'Place Order')]")
 	private WebElement placeOrder;
-
+	
+	@FindBy(xpath="//span[contains(text(),'Yes')]")
+	private WebElement Yes;
 	public OrderDetailsPage() {
 
 		PageFactory.initElements(driver, this);
@@ -27,8 +29,8 @@ public class OrderDetailsPage extends BasePage {
 	}
 
 	public void clickonPlaceOrder() {
-		placeOrder.click();
-		driver.findElement(By.xpath("//span[contains(text(),'Yes')]")).click();
+		click(placeOrder);
+		click(Yes);
 
 	}
 

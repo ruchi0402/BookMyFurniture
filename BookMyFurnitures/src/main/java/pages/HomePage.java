@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -45,43 +44,29 @@ public class HomePage extends BasePage {
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
-
 	// Actions:
 	public String validateHomePageTitle() {
 		return driver.getTitle();
 	}
-
 	public boolean ValidateLogoImage() {
 		return logo.isDisplayed();
 	}
-
 	public void viewWishList() {
-		wishList.click();
+		click(wishList);
 	}
-
 	public void viewCart() {
-		cart.click();
+		click(cart);
 	}
-
 	public void clickonSupport() {
-		supportLink.click();
+		click(supportLink);
 	}
-
 	public void clickSignIn() {
-		// if(signInLink.isDisplayed()||signInLink.isEnabled())
-		signInLink.click();
-		// else System.out.println("Element not found");
-
+		click(signInLink);	
 	}
-
 	public void viewAllFurnitures() {
-		allFurnituresbutton.click();
-
+		click(allFurnituresbutton);
 	}
-
 	public void clickBookNow() {
-		bookNowBTN.click();
-
+		click(bookNowBTN);
 	}
-
 }
