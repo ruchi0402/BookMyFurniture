@@ -16,7 +16,7 @@ import pages.LoggedUserPage;
 import pages.LoginPage;
 import util.TestUtil;
 
-public class LoginPageTest extends BasePage {
+public class LoginPageTest extends BaseTest {
 
 	String sheetName = "LoginData";
 
@@ -24,12 +24,7 @@ public class LoginPageTest extends BasePage {
 		super();
 	}
 
-	@BeforeMethod
-	public void setup() {
-		instatiateBrowser();
-	}
-
-	@DataProvider
+		@DataProvider
 	public Object[][] getLoginData() throws Exception {
 		Object data[][] = TestUtil.getTestData(sheetName);
 		return data;
@@ -53,26 +48,4 @@ public class LoginPageTest extends BasePage {
 		Assert.assertTrue(loginPage.loginSuccessful());
 
 	}
-
-	@AfterMethod
-	public void tearDown(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-
-			}
-		}
-
-		else if (ITestResult.SUCCESS == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		driver.quit();
-	}
-
 }

@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="eventreportListener.ExtentIReporterSuiteListenerAdapter"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.PurchaseProductTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="VerifyPurchaseProductTest" invocation-numbers="1"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testcases.PurchaseProductTest -->
       <class name="testcases.AccountPageTest">
         <methods>
           <include name="createAccountTest" invocation-numbers="0"/>
@@ -21,5 +11,5 @@
         </methods>
       </class> <!-- testcases.AccountPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

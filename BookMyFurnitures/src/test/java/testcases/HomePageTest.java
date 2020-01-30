@@ -15,7 +15,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import util.TestUtil;
 
-public class HomePageTest extends BasePage {
+public class HomePageTest extends BaseTest {
 
 	Logger log = Logger.getLogger(HomePageTest.class);
 
@@ -23,14 +23,7 @@ public class HomePageTest extends BasePage {
 		super();
 	}
 
-	@BeforeMethod
-	public void setup() {
-
-		instatiateBrowser();
-
-	}
-
-	@Test(priority = 1)
+		@Test(priority = 1)
 	public void validateHomePageTitleTest() {
 		log.info("****************************** starting test case *****************************************");
 		log.info("****************************** validateHomePageTitleTest *****************************************");
@@ -62,26 +55,6 @@ public class HomePageTest extends BasePage {
 		homePage.clickSignIn();
 		LoginPage loginPage = new LoginPage();
 		Assert.assertTrue(loginPage.getSignInPagetext());
-	}
-
-	@AfterMethod
-	public void tearDown(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		else if (ITestResult.SUCCESS == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		driver.quit();
 	}
 
 }

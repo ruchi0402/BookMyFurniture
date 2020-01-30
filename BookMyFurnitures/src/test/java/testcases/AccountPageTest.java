@@ -14,20 +14,13 @@ import util.TestUtil;
 import java.io.IOException;
 import org.apache.log4j.Logger;
 
-public class AccountPageTest extends BasePage {
+public class AccountPageTest extends BaseTest {
 
 	String sheetName = "AccountData";
 	Logger log = Logger.getLogger(AccountPageTest.class);
-	
+
 	public AccountPageTest() {
 		super();
-	}
-
-	@BeforeMethod
-	public void setup() {
-
-		instatiateBrowser();
-
 	}
 
 	@DataProvider
@@ -41,7 +34,7 @@ public class AccountPageTest extends BasePage {
 	public void createAccountTest(String name, String mobile, String email, String password) {
 		log.info("****************************** starting test case *****************************************");
 		log.info("****************************** CreateAccountTest *****************************************");
-		
+
 		try {
 			HomePage homePage = new HomePage();
 			LoginPage loginPage = new LoginPage();
@@ -54,23 +47,5 @@ public class AccountPageTest extends BasePage {
 			log.error(e.getMessage());
 			throw (e);
 		}
-	}
-
-	@AfterMethod
-	public void tearDown(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} else if (ITestResult.SUCCESS == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		driver.quit();
 	}
 }

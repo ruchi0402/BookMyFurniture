@@ -28,7 +28,7 @@ public class BasePage {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
-					"C:\\Users\\sdetlabs\\Desktop\\Ruchita-SDET\\BookMyFurniture\\BookMyFurnitures\\src\\main\\java\\config\\config.properties");
+					System.getProperty("user.dir") + "\\src\\main\\java\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class BasePage {
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\sdetlabs\\Desktop\\Ruchita-SDET\\BookMyFurniture\\BookMyFurnitures\\src\\main\\resources\\chromedriver.exe");
+					System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "user.dir" + "\\src\\main\\resources\\geckodriver.exe");

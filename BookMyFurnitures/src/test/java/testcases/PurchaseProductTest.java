@@ -20,7 +20,7 @@ import pages.ProductDetailPage;
 import pages.SelectPaymentPage;
 import util.TestUtil;
 
-public class PurchaseProductTest extends BasePage {
+public class PurchaseProductTest extends BaseTest {
 
 	Logger log = Logger.getLogger(PurchaseProductTest.class);
 	String sheetName = "ProductData";
@@ -28,18 +28,14 @@ public class PurchaseProductTest extends BasePage {
 	public PurchaseProductTest() {
 		super();
 	}
-	
-	@BeforeMethod
-	public void setup() {
-		instatiateBrowser();
-	}
+
 	
 	@DataProvider
 	public Object[][] getProductData() throws Exception {
 		Object data[][] = TestUtil.getTestData(sheetName);
 		return data;
 	}
-	
+
 	@Test(priority = 1, dataProvider = "getProductData")
 	public void VerifyPurchaseProductTest(String username, String password, String Category, String Item,
 			String Payment) {
@@ -69,24 +65,6 @@ public class PurchaseProductTest extends BasePage {
 			log.error(e.getMessage());
 			throw (e);
 		}
-	}
-	@AfterMethod
-	public void tearDown(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		else if (ITestResult.SUCCESS == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		driver.quit();
 	}
 
 }

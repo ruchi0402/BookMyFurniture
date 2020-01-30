@@ -6,13 +6,6 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testcases.PurchaseProductTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="VerifyPurchaseProductTest" invocation-numbers="1"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testcases.PurchaseProductTest -->
       <class name="testcases.AccountPageTest">
         <methods>
           <include name="createAccountTest" invocation-numbers="0"/>
