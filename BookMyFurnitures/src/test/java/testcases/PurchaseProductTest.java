@@ -27,6 +27,8 @@ public class PurchaseProductTest extends BaseTest {
 
 	public PurchaseProductTest() {
 		super();
+		log.info("****************************** starting test case *****************************************");
+		log.info("****************************** PurchaseProductTest *****************************************");
 	}
 
 	

@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,7 +8,7 @@ import base.BasePage;
 
 public class SelectPaymentPage extends BasePage {
 
-	@FindBy(xpath = "//span[@class='ui-radiobutton-icon ui-clickable']")
+	@FindBy(xpath = "//div[@class='ui-g']//div[1]//p-radiobutton[1]//div[1]//div[2]//span[1]")
 	private WebElement creditdebitatmradiobutton;
 
 	@FindBy(xpath = "//div[3]//p-radiobutton[1]//div[1]//div[2]")

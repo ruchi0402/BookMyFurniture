@@ -2,6 +2,7 @@ package testcases;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -19,9 +20,12 @@ import util.TestUtil;
 public class LoginPageTest extends BaseTest {
 
 	String sheetName = "LoginData";
+	Logger log = Logger.getLogger(LoginPageTest.class);
 
 	public LoginPageTest() {
 		super();
+		log.info("****************************** starting test case *****************************************");
+		log.info("****************************** LoginPageTest *****************************************");
 	}
 
 		@DataProvider
@@ -40,12 +44,15 @@ public class LoginPageTest extends BaseTest {
 
 	@Test(priority = 2, dataProvider = "getLoginData")
 	public void logIntoAccount(String username, String password) {
-
+	try {
 		HomePage homePage = new HomePage();
 		LoginPage loginPage = new LoginPage();
 		homePage.clickSignIn();
 		loginPage.logIntoAccount(username, password);
 		Assert.assertTrue(loginPage.loginSuccessful());
-
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			throw (e);
+	}
 	}
 }

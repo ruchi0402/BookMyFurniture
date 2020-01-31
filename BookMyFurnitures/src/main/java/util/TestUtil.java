@@ -14,7 +14,7 @@ import base.CommonConstant;
 
 public class TestUtil extends BasePage {
 
-	public static String TESTDATA_SHEET_PATH = "C:\\Users\\sdetlabs\\Desktop\\Ruchita-SDET\\BookMyFurniture\\BookMyFurnitures\\src\\main\\java\\testdata\\Datasheet.xls";
+	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir") + "\\src\\main\\java\\testdata\\Datasheet.xls";
 
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

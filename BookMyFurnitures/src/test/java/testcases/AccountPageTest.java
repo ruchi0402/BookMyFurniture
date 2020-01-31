@@ -21,6 +21,8 @@ public class AccountPageTest extends BaseTest {
 
 	public AccountPageTest() {
 		super();
+		log.info("****************************** starting test case *****************************************");
+		log.info("****************************** CreateAccountTest *****************************************");
 	}
 
 	@DataProvider
@@ -30,12 +32,9 @@ public class AccountPageTest extends BaseTest {
 	}
 
 	@Test(priority = 1, dataProvider = "getAccountData")
-
 	public void createAccountTest(String name, String mobile, String email, String password) {
-		log.info("****************************** starting test case *****************************************");
-		log.info("****************************** CreateAccountTest *****************************************");
-
-		try {
+	
+	try {
 			HomePage homePage = new HomePage();
 			LoginPage loginPage = new LoginPage();
 			AccountPage accountpage = new AccountPage();

@@ -1,7 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,7 +26,7 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//button[@class='btn btn-primary btn-md']")
 	private WebElement createAccount;
 
-	@FindBy(xpath = "//div[@id='toast-container']")
+	@FindBy(xpath = "//span[contains(text(),'Hi')]")
 	private WebElement loginSuccessful;
 
 	public LoginPage() {

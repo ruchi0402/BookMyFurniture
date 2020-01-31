@@ -21,18 +21,18 @@ public class HomePageTest extends BaseTest {
 
 	public HomePageTest() {
 		super();
+		log.info("****************************** starting test case *****************************************");
+		log.info("****************************** HomePageTest *****************************************");
 	}
 
 		@Test(priority = 1)
 	public void validateHomePageTitleTest() {
-		log.info("****************************** starting test case *****************************************");
-		log.info("****************************** validateHomePageTitleTest *****************************************");
-		try {
+	 try {
 			HomePage homePage = new HomePage();
 			String title = homePage.validateHomePageTitle();
 			Assert.assertEquals(title, "Book My Furniture - QA(2.3.2)-Final");
 		} catch (Exception e) {
-			log.error("Test Case Failed", e);
+			log.error(e.getMessage());
 			throw (e);
 		}
 	}
