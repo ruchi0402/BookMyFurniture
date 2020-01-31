@@ -9,7 +9,7 @@ import base.BasePage;
 
 public class SelectPaymentPage extends BasePage {
 
-	@FindBy(xpath = "//div[@class='ui-g']//div[1]//p-radiobutton[1]//div[1]//div[2]//span[1]")
+	@FindBy(xpath = "//span[@class='ui-radiobutton-icon ui-clickable']")
 	private WebElement creditdebitatmradiobutton;
 
 	@FindBy(xpath = "//div[3]//p-radiobutton[1]//div[1]//div[2]")

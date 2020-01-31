@@ -16,10 +16,10 @@ public class AccountPage extends BasePage {
 	@FindBy(id = "mobileNo")
 	private WebElement mobileNo;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/bmf-layout[1]/div[2]/app-login[1]/div[1]/p-sidebar[1]/div[1]/app-signup[1]/div[1]/div[1]/form[1]/div[3]/input[1]")
+	@FindBy(xpath = "//div[@class='sign-up-main']//input[@id='emailId']")
 	private WebElement email;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/bmf-layout[1]/div[2]/app-login[1]/div[1]/p-sidebar[1]/div[1]/app-signup[1]/div[1]/div[1]/form[1]/div[4]/div[1]/input[1]")
+	@FindBy(xpath = "//div[@class='sign-up-main']//input[@id='password']")
 	private WebElement password;
 
 	@FindBy(xpath = "//button[contains(text(),'Register')]")

@@ -34,7 +34,7 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "//mat-icon[contains(text(),'search')]")
 	private WebElement search;
 
-	@FindBy(xpath = "/html//div[@id='bannerCarouselControl']/div[@class='carousel-inner']/div/div[@class='content']/h3/span/button[.=' Book Now ']")
+	@FindBy(xpath = "//h3[contains(text(),' Enjoy the home decor at cheapest rate possible ever. ')]//button[contains(text(), 'Book Now')]")
 	private WebElement bookNowBTN;
 
 	@FindBy(xpath = "//h3[@class='navbar-brand']")
