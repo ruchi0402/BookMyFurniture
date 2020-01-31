@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import base.BasePage;
 
 public class AccountPage extends BasePage {
+
+	Logger log = Logger.getLogger(AccountPage.class);
 	
 	@FindBy(id = "name")
 	private WebElement custname;
@@ -38,7 +41,13 @@ public class AccountPage extends BasePage {
 		click(registerButton);
 	}
 
-	public Boolean accountSuccessful() {
-		return accountSucessful.isDisplayed();
+	public void accountSuccessful() {
+		if(!accountSucessful.isDisplayed()){
+			log.info("Login Not Successful");
+			assert false;
+		} else {
+			log.info("Login Successful");
+		}
+//		return accountSucessful.isDisplayed();
 	}
 }
