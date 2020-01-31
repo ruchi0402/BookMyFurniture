@@ -36,10 +36,15 @@ public class LoginPageTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void getSignInPagetext() {
-		HomePage homePage = new HomePage();
-		LoginPage loginPage = new LoginPage();
-		homePage.clickSignIn();
-		Assert.assertTrue(loginPage.getSignInPagetext());
+		try {
+			HomePage homePage = new HomePage();
+			LoginPage loginPage = new LoginPage();
+			homePage.clickSignIn();
+			Assert.assertTrue(loginPage.getSignInPagetext());
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			throw (e);
+		}
 	}
 
 	@Test(priority = 2, dataProvider = "getLoginData")
