@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class ItemSelectPage extends BasePage {
+public class ItemSelectPage extends CommonMethods {
 
 	@FindBy(xpath = "//h3[@class='text-center ng-star-inserted']")
 	private WebElement searchpage;

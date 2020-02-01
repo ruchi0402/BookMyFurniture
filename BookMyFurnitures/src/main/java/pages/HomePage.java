@@ -1,12 +1,15 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class HomePage extends BasePage {
+public class HomePage extends CommonMethods {
+	Logger log = Logger.getLogger(HomePage.class);
 
 	// Object Repository or OR or Page Factory Elements
 
@@ -46,12 +49,19 @@ public class HomePage extends BasePage {
 	}
 
 	// Actions:
-	public String validateHomePageTitle() {
-		return driver.getTitle();
+	public void validateHomePageTitle() {
+		try {
+			if(driver.getTitle()== "Book My Furniture - QA(2.3.2)-Final");
+			log.info("Title matches");
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			assert false;
+		}
 	}
-
-	public boolean ValidateLogoImage() {
-		return logo.isDisplayed();
+		
+	public void ValidateLogoImage() {
+		
+	isDisplayed(logo, "Logo is displayed correctly");
 	}
 
 	public void viewWishList() {

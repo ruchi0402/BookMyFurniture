@@ -10,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class OrderDetailsPage extends BasePage {
+public class OrderDetailsPage extends CommonMethods {
 
 	@FindBy(xpath = "//button[contains(text(),'Place Order')]")
 	private WebElement placeOrder;
@@ -25,8 +25,9 @@ public class OrderDetailsPage extends BasePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public Boolean orderDetailPage(String itemdetail) {
-		return driver.findElement(By.xpath("//h2[contains(text(),'" + itemdetail + "')]")).isDisplayed();
+	public void orderDetailPage(String itemdetail) {
+		isDisplayed(driver.findElement(By.xpath("//h2[contains(text(),'" + itemdetail + "')]")), "order details page is displayed");
+		
 	}
 
 	public void clickonPlaceOrder() {

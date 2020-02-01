@@ -9,46 +9,22 @@ public class HomePageTest extends BaseTest {
 
 	Logger log = Logger.getLogger(HomePageTest.class);
 
-	public HomePageTest() {
-		super();
-		log.info("****************************** starting test case *****************************************");
-		log.info("****************************** HomePageTest *****************************************");
-	}
-
-		@Test(priority = 1)
+	@Test(priority = 1)
 	public void validateHomePageTitleTest() {
-	 try {
-			HomePage homePage = new HomePage();
-			String title = homePage.validateHomePageTitle();
-			Assert.assertEquals(title, "Book My Furniture - QA(2.3.2)-Final");
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			throw (e);
-		}
-	}
-
+		log.info("******************Starting validateHomePageTitleTest****************" );
+	 		HomePage homePage = new HomePage();
+			homePage.validateHomePageTitle();
+			
+			}
+	
 	@Test(priority = 2)
-	public void ValidateLogoImageTest() {
-		try {
+	public void ValidateLogoImageTest() {	
+		log.info("******************Starting ValidateLogoImageTest****************" );
 			HomePage homePage = new HomePage();
-			Assert.assertTrue(homePage.ValidateLogoImage());
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			throw (e);
-		}
+			homePage.ValidateLogoImage();
+		
 	}
 
-	@Test(priority = 3)
-	public void verifyclickSignInTest() {
-		try {
-			HomePage homePage = new HomePage();
-			homePage.clickSignIn();
-			LoginPage loginPage = new LoginPage();
-			Assert.assertTrue(loginPage.getSignInPagetext());
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			throw (e);
-		}
-	}
+	
 
 }

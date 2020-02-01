@@ -7,13 +7,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class LoggedUserPage extends BasePage {
+public class LoggedUserPage extends CommonMethods {
 
-	@FindBy(xpath = "//div[@id='toast-container']")
-	private WebElement loggedIn;
-
+	
 	@FindBy(xpath = "//div[@class='circle-text-chair']")
 	private WebElement chair;
 
@@ -26,14 +24,7 @@ public class LoggedUserPage extends BasePage {
 	@FindBy(xpath = "")
 	private WebElement bed;
 
-	public String verifyLoginPageUrl() {
-		return driver.getCurrentUrl();
-	}
-
-	public Boolean verifyUserLoggedIn() {
-		return loggedIn.isDisplayed();
-	}
-
+	
 	public LoggedUserPage() {
 		PageFactory.initElements(driver, this);
 	}

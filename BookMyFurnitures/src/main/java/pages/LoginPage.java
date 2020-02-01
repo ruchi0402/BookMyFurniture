@@ -1,12 +1,15 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends CommonMethods {
+	Logger log = Logger.getLogger(LoginPage.class);
+
 
 	@FindBy(id = "emailId")
 	private WebElement email;
@@ -40,12 +43,13 @@ public class LoginPage extends BasePage {
 		click(signInButton);
 	}
 
-	public Boolean getSignInPagetext() {
-		return signInpagetext.isDisplayed();
+	public void getSignInPagetext() {
+		isDisplayed(signInpagetext, "Sign in page is displayed");
+				
 	}
 
-	public Boolean loginSuccessful() {
-		return loginSuccessful.isDisplayed();
+	public void loginSuccessful() {
+		isDisplayed(loginSuccessful, "Login is successful");
 	}
 
 	public void clickCreateAccount() {

@@ -1,21 +1,19 @@
 package testcases;
 
 import java.io.IOException;
-
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import base.BasePage;
+import base.Driver;
+import config.ReadProperties;
 import util.TestUtil;
 
-public class BaseTest extends BasePage {
-
+public class BaseTest extends Driver {
+		
 	@BeforeMethod
 	public void setup() {
-		
-		instatiateBrowser();
-
+	ReadProperties.readFromPropertyFile();
+	instatiateBrowser();
 	}
 
 	@AfterMethod

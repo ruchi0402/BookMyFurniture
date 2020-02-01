@@ -9,10 +9,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import base.BasePage;
+import base.CommonMethods;
 import base.CommonConstant;
 
-public class TestUtil extends BasePage {
+public class TestUtil extends CommonMethods {
 
 	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir") + "\\src\\main\\java\\testdata\\Datasheet.xls";
 

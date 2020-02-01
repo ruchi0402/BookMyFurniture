@@ -1,12 +1,21 @@
-2020-01-30 21:09:10,419  INFO [main] HomePageTest:24 - ****************************** starting test case *****************************************
-2020-01-30 21:09:10,433  INFO [main] HomePageTest:25 - ****************************** HomePageTest *****************************************
-2020-01-30 21:09:10,465  INFO [main] PurchaseProductTest:30 - ****************************** starting test case *****************************************
-2020-01-30 21:09:10,465  INFO [main] PurchaseProductTest:31 - ****************************** PurchaseProductTest *****************************************
-2020-01-30 21:09:10,471  INFO [main] LoginPageTest:27 - ****************************** starting test case *****************************************
-2020-01-30 21:09:10,472  INFO [main] LoginPageTest:28 - ****************************** LoginPageTest *****************************************
-2020-01-30 21:09:10,476  INFO [main] AccountPageTest:24 - ****************************** starting test case *****************************************
-2020-01-30 21:09:10,477  INFO [main] AccountPageTest:25 - ****************************** CreateAccountTest *****************************************
-2020-01-30 21:10:50,383 ERROR [main] LoginPageTest:54 - no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Hi')]"}
+2020-01-31 23:12:56,756  INFO [main] HomePageTest:14 - ******************Starting validateHomePageTitleTest****************
+2020-01-31 23:12:56,813  INFO [main] HomePage:55 - Title matches
+2020-01-31 23:13:07,590  INFO [main] HomePageTest:22 - ******************Starting ValidateLogoImageTest****************
+2020-01-31 23:13:07,637  INFO [main] CommonMethods:46 - Logo is displayed correctly
+2020-01-31 23:13:17,883  INFO [main] PurchaseProductTest:31 - *************Executing Purchase Product test TC-1********
+2020-01-31 23:13:19,555  INFO [main] CommonMethods:46 - Login is successful for 
+2020-01-31 23:13:21,897  INFO [main] CommonMethods:46 - Product Detail page is displayed
+2020-01-31 23:13:22,422  INFO [main] CommonMethods:46 - order details page is displayed
+2020-01-31 23:13:23,255  INFO [main] CommonMethods:46 - Order is placed successfully
+2020-01-31 23:13:34,770  INFO [main] PurchaseProductTest:31 - *************Executing Purchase Product test TC-2********
+2020-01-31 23:13:36,495  INFO [main] CommonMethods:46 - Login is successful for 
+2020-01-31 23:13:38,383  INFO [main] CommonMethods:46 - Product Detail page is displayed
+2020-01-31 23:13:39,018  INFO [main] CommonMethods:46 - order details page is displayed
+2020-01-31 23:13:39,703  INFO [main] CommonMethods:46 - Order is placed successfully
+2020-01-31 23:13:52,452  INFO [main] LoginPageTest:25 - ******************Starting getSignInPagetext****************
+2020-01-31 23:13:53,123  INFO [main] CommonMethods:46 - Sign in page is displayed
+2020-01-31 23:14:05,127  INFO [main] LoginPageTest:35 - **************Executing log in to the Account test TC-1************
+2020-01-31 23:14:26,078 ERROR [main] CommonMethods:48 - no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Hi')]"}
   (Session info: chrome=79.0.3945.130)
   (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -15,9 +24,12 @@ Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17
 System info: host: 'E4ML14565', ip: '192.168.0.4', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '13'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\Admin\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}
-Session ID: 7c71c9c6bb7fad8b80e588cab89d8f45
+Session ID: 7a50b8c284e53cd52179264104bd100c
 *** Element info: {Using=xpath, value=//span[contains(text(),'Hi')]}
-2020-01-30 21:11:32,886 ERROR [main] AccountPageTest:46 - no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='toast-container']"}
+2020-01-31 23:14:35,726  INFO [main] LoginPageTest:35 - **************Executing log in to the Account test TC-2************
+2020-01-31 23:14:37,469  INFO [main] CommonMethods:46 - Login is successful for 
+2020-01-31 23:14:46,323  INFO [main] AccountPageTest:24 - ***********Executing create Account TC-1***********
+2020-01-31 23:15:08,017 ERROR [main] CommonMethods:48 - no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='toast-container']"}
   (Session info: chrome=79.0.3945.130)
   (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -26,15 +38,15 @@ Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17
 System info: host: 'E4ML14565', ip: '192.168.0.4', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '13'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\Admin\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}
-Session ID: 66f65aacd363d4041ff392e8ce30e823
+Session ID: 8469b1cf7a684e7913f9a3b235c3d2a8
 *** Element info: {Using=xpath, value=//div[@id='toast-container']}
-2020-01-30 21:11:34,497 DEBUG [main] cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2020-01-30 21:11:34,500 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2020-01-30 21:11:34,503 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2020-01-30 21:11:34,506 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2020-01-30 21:11:34,507 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/Admin/.gradle/caches/modules-2/files-2.1/com.relevantcodes/extentreports/2.41.0/427e1b2b22ab90f37f58869ca109f0e6f014cab2/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2020-01-30 21:11:34,839 DEBUG [main] cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2020-01-30 21:11:34,842 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2020-01-30 21:11:34,844 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2020-01-30 21:11:34,845 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2020-01-30 21:11:34,846 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/Admin/.gradle/caches/modules-2/files-2.1/com.relevantcodes/extentreports/2.41.0/427e1b2b22ab90f37f58869ca109f0e6f014cab2/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2020-01-31 23:15:09,436 DEBUG [main] cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2020-01-31 23:15:09,438 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2020-01-31 23:15:09,441 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2020-01-31 23:15:09,443 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2020-01-31 23:15:09,444 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/Admin/.gradle/caches/modules-2/files-2.1/com.relevantcodes/extentreports/2.41.0/427e1b2b22ab90f37f58869ca109f0e6f014cab2/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2020-01-31 23:15:09,744 DEBUG [main] cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2020-01-31 23:15:09,745 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2020-01-31 23:15:09,746 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2020-01-31 23:15:09,746 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2020-01-31 23:15:09,747 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/Admin/.gradle/caches/modules-2/files-2.1/com.relevantcodes/extentreports/2.41.0/427e1b2b22ab90f37f58869ca109f0e6f014cab2/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl"

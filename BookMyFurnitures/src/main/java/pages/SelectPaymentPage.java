@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class SelectPaymentPage extends BasePage {
+public class SelectPaymentPage extends CommonMethods {
 
 	@FindBy(xpath = "//div[@class='ui-g']//div[1]//p-radiobutton[1]//div[1]//div[2]//span[1]")
 	private WebElement creditdebitatmradiobutton;
@@ -48,8 +48,8 @@ public class SelectPaymentPage extends BasePage {
 		click(placeorder);
 	}
 
-	public Boolean OrderSuccessful() {
+	public void OrderSuccessful() {
 
-		return orderSuccessful.isDisplayed();
+		 isDisplayed(orderSuccessful,"Order is placed successfully");
 	}
 }

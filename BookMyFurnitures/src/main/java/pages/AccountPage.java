@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.BasePage;
+import base.CommonMethods;
 
-public class AccountPage extends BasePage {
+public class AccountPage extends CommonMethods {
 
 	Logger log = Logger.getLogger(AccountPage.class);
 	
@@ -33,21 +33,17 @@ public class AccountPage extends BasePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void createAccount(String name, String mobile, String emailAddress, String Password) {
+	public void createAccount(String name, String mobile, String emailAddress, String passwrd) {
 		sendKeys(custname, name);
 		sendKeys(mobileNo, mobile);
 		sendKeys(email, emailAddress);
-		sendKeys(password, Password);
+		sendKeys(password, passwrd);
 		click(registerButton);
 	}
 
 	public void accountSuccessful() {
-		if(!accountSucessful.isDisplayed()){
-			log.info("Login Not Successful");
-			assert false;
-		} else {
-			log.info("Login Successful");
-		}
-//		return accountSucessful.isDisplayed();
-	}
+		isDisplayed(accountSucessful, "Account is successfully created for");
 }
+}
+
+

@@ -15,25 +15,20 @@ import util.TestUtil;
 public class PurchaseProductTest extends BaseTest {
 
 	Logger log = Logger.getLogger(PurchaseProductTest.class);
-	String sheetName = "ProductData";
-
-	public PurchaseProductTest() {
-		super();
-		log.info("****************************** starting test case *****************************************");
-		log.info("****************************** PurchaseProductTest *****************************************");
-	}
-
 	
+
+
 	@DataProvider
 	public Object[][] getProductData() throws Exception {
+		String sheetName = "ProductData";
 		Object data[][] = TestUtil.getTestData(sheetName);
 		return data;
 	}
 
 	@Test(priority = 1, dataProvider = "getProductData")
-	public void VerifyPurchaseProductTest(String username, String password, String Category, String Item,
+	public void VerifyPurchaseProductTest(String testcase,String username, String password, String Category, String Item,
 			String Payment) {
-		try {
+		    log.info("*************Executing Purchase Product test "+ testcase+"********");
 			HomePage homePage = new HomePage();
 			LoginPage loginPage = new LoginPage();
 			LoggedUserPage logininuser = new LoggedUserPage();
@@ -43,22 +38,19 @@ public class PurchaseProductTest extends BaseTest {
 			SelectPaymentPage selectpayment = new SelectPaymentPage();
 			homePage.clickSignIn();
 			loginPage.logIntoAccount(username, password);
-			Assert.assertTrue(loginPage.loginSuccessful());
+			loginPage.loginSuccessful();
 			logininuser.ClickOnCategory(Category);
-			Assert.assertTrue(itemselect.itemSelectPage());
+			itemselect.itemSelectPage();
 			itemselect.ClickonProduct(Item);
-			Assert.assertTrue(productdetail.getProductDetail(Item));
+			productdetail.getProductDetail(Item);
 			productdetail.clickBuyNow();
-			Assert.assertTrue(orderdetail.orderDetailPage(Item));
+			orderdetail.orderDetailPage(Item);
 			orderdetail.clickonPlaceOrder();
-			Assert.assertTrue(selectpayment.verifySelectPaymentPage());
+			selectpayment.verifySelectPaymentPage();
 			selectpayment.selectPaymenttype(Payment);
 			selectpayment.clickonPlaceOrder();
-			Assert.assertTrue(selectpayment.OrderSuccessful());
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			throw (e);
+			selectpayment.OrderSuccessful();
+		
 		}
 	}
 
-}
