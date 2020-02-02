@@ -15,6 +15,7 @@ Data Driven Framework
 +
 TestNG
 
+Approach is as follows:
 1  Page Classes
 2) Test Classes
 3) Test Base-(Parent class of the test classes)
@@ -23,6 +24,7 @@ TestNG
 6) Properties file class that reads url and browser data from the config.properties file.
 7) Test Util class- (Excel utility, Screenshot method)
 8) External data sheet(xls format)
+9) Common Constant class contains common static data.
 
 Technology
 Java
