@@ -22,12 +22,12 @@ public class AccountPageTest extends BaseTest {
 	@Test(priority = 1, dataProvider = "getAccountData")
 	public void createAccountTest(String testcase,String name, String mobile, String email, String password) {
 		log.info("***********Executing create Account "+ testcase +"***********");
-			HomePage homePage = new HomePage();
-			LoginPage loginPage = new LoginPage();
-			AccountPage accountPage = new AccountPage();
-			homePage.clickSignIn();
-			loginPage.clickCreateAccount();
-			accountPage.createAccount(name, mobile, email, password);
-			accountPage.accountSuccessful();
+		HomePage homePage = new HomePage();
+	  	LoginPage loginPage = new LoginPage();
+		AccountPage accountPage = new AccountPage();
+		homePage.clickSignIn();
+		loginPage.clickCreateAccount();
+		accountPage.createAccount(name, mobile, email, password);
+		accountPage.accountSuccessful();
 	}
 }

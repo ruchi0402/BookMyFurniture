@@ -4,15 +4,15 @@ import java.io.IOException;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import base.Driver;
+
+import base.CommonMethods;
 import config.ReadProperties;
 import util.TestUtil;
 
-public class BaseTest extends Driver {
+public class BaseTest extends CommonMethods {
 		
 	@BeforeMethod
 	public void setup() {
-	ReadProperties.readFromPropertyFile();
 	instatiateBrowser();
 	}
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class CommonMethods extends Driver {
+public class CommonMethods extends BaseClass {
 	
 Logger log = Logger.getLogger(CommonMethods.class);	
 

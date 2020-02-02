@@ -24,7 +24,4 @@ public class HomePageTest extends BaseTest {
 			homePage.ValidateLogoImage();
 		
 	}
-
-	
-
 }
