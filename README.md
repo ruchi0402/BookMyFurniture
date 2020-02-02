@@ -15,14 +15,14 @@ Data Driven Framework
 +
 TestNG
 
-Approach is as follows:
-1  Page Classes
-2) Test Classes
-3) Test Base-(Parent class of the test classes)
+Framework contains below components:
+1  Page Classes contains Object Repository and Actions on the Webelements.
+2) Test Classes contains test methods.
+3) Test Base-(Parent class of all the test classes)
 4) Base Class- Base class is for driver and browser set up. It extends Read Properties class from which it is getting browser and url data. This is inherited by the testbase class.
 5) Common Methods contains repeatable methods that are called from page classes.
 6) Properties file class that reads url and browser data from the config.properties file.
-7) Test Util class- (Excel utility, Screenshot method)
+7) Test Util class- (Excel utility, Screenshot capture)
 8) External data sheet(xls format)
 9) Common Constant class contains common static data.
 
