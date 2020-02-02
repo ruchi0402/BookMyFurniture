@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web Application Suite">
+<listeners>
+		<listener
+			class-name="reports.TestNgListeners" />
+	</listeners>
+	<test thread-count="5" name="webTests">
+		<classes>
+			<class name="testcases_WebAutomation.LoginPageTest" />
+			<class name="testcases_WebAutomation.AccountPageTest" />
+			<class name="testcases_WebAutomation.HomePageTest" />
+			<class name="testcases_WebAutomation.PurchaseProductTest" />			
+	    </classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

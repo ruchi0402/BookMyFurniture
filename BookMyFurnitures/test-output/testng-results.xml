@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="ApiSuite" duration-ms="2038" started-at="2020-02-02T14:23:05 CST" finished-at="2020-02-02T14:23:07 CST">
+    <groups>
+    </groups>
+    <test name="apiTests" duration-ms="2038" started-at="2020-02-02T14:23:05 CST" finished-at="2020-02-02T14:23:07 CST">
+      <class name="testcases_RestAssured.GetAllProducts">
+        <test-method status="PASS" signature="getAllProductTest()[pri:0, instance:testcases_RestAssured.GetAllProducts@646d64ab]" name="getAllProductTest" duration-ms="1480" started-at="2020-02-02T14:23:05 CST" finished-at="2020-02-02T14:23:07 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllProductTest -->
+      </class> <!-- testcases_RestAssured.GetAllProducts -->
+      <class name="testcases_RestAssured.AddProduct">
+        <test-method status="PASS" signature="addProductTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:testcases_RestAssured.AddProduct@59e5ddf]" name="addProductTest" duration-ms="133" started-at="2020-02-02T14:23:07 CST" data-provider="getProductData" finished-at="2020-02-02T14:23:07 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[white]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2019-08-01]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[youll never leave]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[10.0]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[soft cotton, sandal Wood]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Tacoma kingbed]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[24000.0]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[2019-09-01]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[10.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductTest -->
+      </class> <!-- testcases_RestAssured.AddProduct -->
+    </test> <!-- apiTests -->
+  </suite> <!-- ApiSuite -->
+</testng-results>

@@ -1,11 +1,9 @@
-package testcases;
+package testcases_WebAutomation;
 import org.apache.log4j.Logger;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.LoginPage;
 
-public class HomePageTest extends BaseTest {
+public class HomePageTest extends BaseTest_Web {
 
 	Logger log = Logger.getLogger(HomePageTest.class);
 

@@ -22,7 +22,7 @@ public class TestNgListeners extends TestListenerAdapter {
 
 	public void onStart(ITestContext testContext) {
 		htmlReporter = new ExtentHtmlReporter(
-				System.getProperty("user.dir") + "/test-output/ruchita/STMExtentReport.html");
+		System.getProperty("user.dir") + "/test-output/AutomationReport"+System.currentTimeMillis()+".html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Environment", "QA");
@@ -31,7 +31,6 @@ public class TestNgListeners extends TestListenerAdapter {
 		htmlReporter.config().setReportName("WebAutomation Test Cases ");
 		htmlReporter.config().setTheme(Theme.DARK);
 	}
-
 	public void onTestSuccess(ITestResult result) {
 		logger=extent.createTest(result.getName()); // create new entry in the report
 		logger.log(Status.PASS,MarkupHelper.createLabel(result.getName(),ExtentColor.GREEN));
@@ -44,9 +43,7 @@ public class TestNgListeners extends TestListenerAdapter {
 	    {
 			   e.getMessage();
 	    }
-		
-	}
-
+}
 	public void onTestFailure(ITestResult result) {
 		logger=extent.createTest(result.getName()); 
 		logger.log(Status.FAIL,MarkupHelper.createLabel(result.getName(),ExtentColor.RED));
@@ -63,7 +60,5 @@ public class TestNgListeners extends TestListenerAdapter {
 
 	public void onFinish(ITestContext testContext) {
 		extent.flush();
-
 	}
-
 }
