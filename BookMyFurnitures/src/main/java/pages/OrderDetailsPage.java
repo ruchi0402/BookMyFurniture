@@ -20,8 +20,9 @@ public class OrderDetailsPage extends CommonMethods {
 	}
 
 	public void orderDetailPage(String itemdetail) {
-		isDisplayed(driver.findElement(By.xpath("//h2[contains(text(),'" + itemdetail + "')]")), "order details page is displayed");
-		
+		isDisplayed(driver.findElement(By.xpath("//h2[contains(text(),'" + itemdetail + "')]")),
+				"order details page is displayed");
+
 	}
 
 	public void clickonPlaceOrder() {

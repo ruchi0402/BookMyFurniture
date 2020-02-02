@@ -10,10 +10,10 @@ import base.CommonMethods;
 public class AccountPage extends CommonMethods {
 
 	Logger log = Logger.getLogger(AccountPage.class);
-	//@FindBy is to find page objects
+	// @FindBy is to find page objects
 	@FindBy(id = "name")
 	private WebElement custname;
-	
+
 	@FindBy(id = "mobileNo")
 	private WebElement mobileNo;
 
@@ -28,15 +28,20 @@ public class AccountPage extends CommonMethods {
 
 	@FindBy(xpath = "//div[@id='toast-container']")
 	private WebElement accountSucessful;
-    
-	//The PageFactory Class in Selenium is an extension to the Page Object design pattern. 
-	//It is used to initialize the elements of the Page Object or instantiate the Page Objects itself. ... 
-	//It is used to initialize elements of a Page class without having to use 'FindElement' or 'FindElements'.
+
+	// The PageFactory Class in Selenium is an extension to the Page Object design
+	// pattern.
+	// It is used to initialize the elements of the Page Object or instantiate the
+	// Page Objects itself. ...
+	// It is used to initialize elements of a Page class without having to use
+	// 'FindElement' or 'FindElements'.
 	public AccountPage() {
 		PageFactory.initElements(driver, this);
 	}
-    //creatAccount method to create new account that is fed data from testcase. This method is using custom "sendKeys" and "click" for data
-	//entry to the text boxes and submitting form respectively.
+
+	// creatAccount method to create new account that is fed data from testcase.
+	// This method is using custom "sendKeys" and "click" for data
+	// entry to the text boxes and submitting form respectively.
 	public void createAccount(String name, String mobile, String emailAddress, String passwrd) {
 		sendKeys(custname, name);
 		sendKeys(mobileNo, mobile);
@@ -44,10 +49,9 @@ public class AccountPage extends CommonMethods {
 		sendKeys(password, passwrd);
 		click(registerButton);
 	}
+
 //accountSuccessful method to validate that the account is successfully created.
 	public void accountSuccessful() {
 		isDisplayed(accountSucessful, "Account is successfully created for");
+	}
 }
-}
-
-

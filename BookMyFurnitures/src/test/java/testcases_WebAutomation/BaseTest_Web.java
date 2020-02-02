@@ -12,18 +12,16 @@ public class BaseTest_Web extends CommonMethods {
 	public ExtentReports extent;
 	public ExtentTest logger;
 
-
 	@BeforeMethod
 	public void setup() {
 		instatiateBrowser();
 	}
+
 	@AfterMethod
 	public void tearDown() {
-		
+
 		driver.quit();
 
 	}
 
-	
-	
 }

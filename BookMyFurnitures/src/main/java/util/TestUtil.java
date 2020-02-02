@@ -21,15 +21,17 @@ public class TestUtil extends CommonMethods {
 
 	static Logger log = Logger.getLogger(TestUtil.class);
 
-	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir") + "\\src\\main\\java\\testdata\\Datasheet.xls";
+	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")
+			+ "\\src\\main\\java\\testdata\\Datasheet.xls";
 
 	public static String takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String destination = System.getProperty("user.dir")+ "/test-output/screenshots/" + System.currentTimeMillis() + ".png";
-		File finalDestination=new File(destination);
-		FileUtils.copyFile(scrFile,finalDestination);
+		String destination = System.getProperty("user.dir") + "/test-output/screenshots/" + System.currentTimeMillis()
+				+ ".png";
+		File finalDestination = new File(destination);
+		FileUtils.copyFile(scrFile, finalDestination);
 		return destination;
-					
+
 	}
 
 	public static Object[][] getTestData(String sheetName) throws InvalidFormatException {

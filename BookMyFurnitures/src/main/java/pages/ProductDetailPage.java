@@ -19,8 +19,10 @@ public class ProductDetailPage extends CommonMethods {
 	}
 
 	public void getProductDetail(String itemdetail) {
-		isDisplayed(driver.findElement(By.xpath("//div[@class='float-left']//h1[contains(text(),'" + itemdetail + "')]")), "Product Detail page is displayed");
-				
+		isDisplayed(
+				driver.findElement(By.xpath("//div[@class='float-left']//h1[contains(text(),'" + itemdetail + "')]")),
+				"Product Detail page is displayed");
+
 	}
 
 	public void clickBuyNow() {

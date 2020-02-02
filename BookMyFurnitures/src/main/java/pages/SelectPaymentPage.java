@@ -50,6 +50,6 @@ public class SelectPaymentPage extends CommonMethods {
 
 	public void OrderSuccessful() {
 
-		 isDisplayed(orderSuccessful,"Order is placed successfully");
+		isDisplayed(orderSuccessful, "Order is placed successfully");
 	}
 }

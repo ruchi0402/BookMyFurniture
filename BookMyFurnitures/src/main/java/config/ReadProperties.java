@@ -12,21 +12,19 @@ import util.TestUtil;
 public class ReadProperties {
 	public static Properties prop;
 	static Logger log = Logger.getLogger(ReadProperties.class);
-	
-	public static void readFromPropertyFile()
-	{
-	
+
+	public static void readFromPropertyFile() {
+
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\config\\config.properties");
+			FileInputStream ip = new FileInputStream(
+					System.getProperty("user.dir") + "\\src\\main\\java\\config\\config.properties");
 			prop.load(ip);
-		
+
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
-	
-		
+
 	}
 
 }
-

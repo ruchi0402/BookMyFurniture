@@ -26,8 +26,9 @@ public class ItemSelectPage extends CommonMethods {
 	}
 
 	public void ClickonProduct(String product) {
-		//dynamic xpath based on input from excel sheet. This is used as there are numerous products on the page and defining each of them using
-		//page object is not useful.
+		// dynamic xpath based on input from excel sheet. This is used as there are
+		// numerous products on the page and defining each of them using
+		// page object is not useful.
 		By productname = By.xpath("//b[contains(text(),'" + product + "')]");
 		click(productname);
 	}

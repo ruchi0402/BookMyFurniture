@@ -51,17 +51,18 @@ public class HomePage extends CommonMethods {
 	// Actions:
 	public void validateHomePageTitle() {
 		try {
-			if(driver.getTitle()== "Book My Furniture - QA(2.3.2)-Final");
+			if (driver.getTitle() == "Book My Furniture - QA(2.3.2)-Final")
+				;
 			log.info("Title matches");
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			assert false;
 		}
 	}
-		
+
 	public void ValidateLogoImage() {
-		
-	isDisplayed(logo, "Logo is displayed correctly");
+
+		isDisplayed(logo, "Logo is displayed correctly");
 	}
 
 	public void viewWishList() {
