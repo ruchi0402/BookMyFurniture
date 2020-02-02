@@ -11,7 +11,8 @@ public class CommonMethods extends BaseClass {
 	
 Logger log = Logger.getLogger(CommonMethods.class);	
 
-//method overloading
+//click method is overloaded with parameters locator and Webelement. Basically this method checks the 
+// presence of the locator/webelement using try/catch block.
 	public void click(By locator) {
 		try {
 			driver.findElement(locator).click();
@@ -29,7 +30,7 @@ Logger log = Logger.getLogger(CommonMethods.class);
 			assert false;
 		}
 	}
-
+//sendKeys method checks the presence the webelement using try/catch block and performs operation if available.
 	public void sendKeys(WebElement webElement, String name) {
 		try {
 			webElement.sendKeys(name);
@@ -38,7 +39,7 @@ Logger log = Logger.getLogger(CommonMethods.class);
 			assert false;
 		}
 	}
-
+//isDisplayed validates the operation is successful, test case results depends on this.
 		
 	public void isDisplayed(WebElement webElement, String message ) {
 		try {

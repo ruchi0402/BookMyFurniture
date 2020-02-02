@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import config.ReadProperties;
 
+// Base class is for driver and browser set up. It extends Read Properties class from which it is getting browser and url data.
 public class BaseClass extends ReadProperties{
 	
 	public static WebDriver driver;

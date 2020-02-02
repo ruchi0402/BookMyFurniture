@@ -12,24 +12,13 @@ import base.CommonMethods;
 public class LoggedUserPage extends CommonMethods {
 
 	
-	@FindBy(xpath = "//div[@class='circle-text-chair']")
-	private WebElement chair;
-
-	@FindBy(xpath = "//div[@class='circle-text-sofa']")
-	private WebElement sofa;
-
-	@FindBy(xpath = "//div[@class='circle-text-table']")
-	private WebElement table;
-
-	@FindBy(xpath = "")
-	private WebElement bed;
-
 	
 	public LoggedUserPage() {
 		PageFactory.initElements(driver, this);
 	}
 
 	public void ClickOnCategory(String category) {
+		//dynamic xpath based on input from excel sheet. This is to avoid defining all the categories using @FindBy annotation.
 		By categoryname = By.xpath("//div[@class='circle-text-" + category + "']");
 		click(categoryname);
 	}

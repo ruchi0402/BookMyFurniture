@@ -10,7 +10,6 @@ import base.CommonMethods;
 public class LoginPage extends CommonMethods {
 	Logger log = Logger.getLogger(LoginPage.class);
 
-
 	@FindBy(id = "emailId")
 	private WebElement email;
 
@@ -45,7 +44,7 @@ public class LoginPage extends CommonMethods {
 
 	public void getSignInPagetext() {
 		isDisplayed(signInpagetext, "Sign in page is displayed");
-				
+
 	}
 
 	public void loginSuccessful() {

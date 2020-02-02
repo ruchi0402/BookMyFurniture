@@ -19,7 +19,7 @@ public class HomePageTest extends BaseTest {
 	
 	@Test(priority = 2)
 	public void ValidateLogoImageTest() {	
-		log.info("******************Starting ValidateLogoImageTest****************" );
+		log.info("******************Starting ValidateLogoImageTest*******************" );
 			HomePage homePage = new HomePage();
 			homePage.ValidateLogoImage();
 		

@@ -10,7 +10,6 @@ import util.TestUtil;
 
 public class LoginPageTest extends BaseTest {
 
-	
 	Logger log = Logger.getLogger(LoginPageTest.class);
 
 	@DataProvider
@@ -22,22 +21,22 @@ public class LoginPageTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void getSignInPagetext() {
-		log.info("******************Starting getSignInPagetext****************" );
-			HomePage homePage = new HomePage();
-			LoginPage loginPage = new LoginPage();
-			homePage.clickSignIn();
-			loginPage.getSignInPagetext();
-		
+		log.info("******************Starting getSignInPagetext****************");
+		HomePage homePage = new HomePage();
+		LoginPage loginPage = new LoginPage();
+		homePage.clickSignIn();
+		loginPage.getSignInPagetext();
+
 	}
 
 	@Test(priority = 2, dataProvider = "getLoginData")
 	public void logIntoAccount(String testcase, String username, String password) {
-		log.info("**************Executing log in to the Account test "+ testcase+"************");
+		log.info("**************Executing log in to the Account test " + testcase + "************");
 		HomePage homePage = new HomePage();
 		LoginPage loginPage = new LoginPage();
 		homePage.clickSignIn();
 		loginPage.logIntoAccount(username, password);
-	    loginPage.loginSuccessful();
-		} 
-	
+		loginPage.loginSuccessful();
+	}
+
 }

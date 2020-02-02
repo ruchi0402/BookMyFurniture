@@ -1,37 +1,29 @@
 package testcases;
 
-import java.io.IOException;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import base.CommonMethods;
-import config.ReadProperties;
-import util.TestUtil;
 
 public class BaseTest extends CommonMethods {
-		
+	public ExtentHtmlReporter htmlReporter;
+	public ExtentReports extent;
+	public ExtentTest logger;
+
+
 	@BeforeMethod
 	public void setup() {
-	instatiateBrowser();
+		instatiateBrowser();
 	}
-
 	@AfterMethod
-	public void tearDown(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} else if (ITestResult.SUCCESS == result.getStatus()) {
-			try {
-				TestUtil.takeScreenshotAtEndOfTest();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+	public void tearDown() {
+		
 		driver.quit();
+
 	}
 
+	
+	
 }
