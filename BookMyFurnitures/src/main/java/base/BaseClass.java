@@ -12,9 +12,9 @@ public class BaseClass extends ReadProperties {
 
 	public static WebDriver driver;
 
-	public static void instatiateBrowser() {
+	public static void instatiateBrowser () {
 		readFromPropertyFile();
-		String browserName = prop.getProperty("browser");
+		String browserName =prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe");
