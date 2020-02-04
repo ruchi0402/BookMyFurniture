@@ -31,14 +31,14 @@ public class TestNgListeners2 extends TestListenerAdapter {
 	public void onTestSuccess(ITestResult result) {
 		logger = extent.createTest(result.getName()); // create new entry in the report
 		logger.log(Status.PASS, MarkupHelper.createLabel(result.getName(), ExtentColor.GREEN));
-		logger.info(result.getName() + " is displayed successfully");
-
-	}
+		logger.info(result.getName() + " is passed");
+		}
 
 	public void onTestFailure(ITestResult result) {
 		logger = extent.createTest(result.getName());
 		logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName(), ExtentColor.RED));
 		logger.fail(result.getThrowable());
+		logger.error(result.getName() + " is failed");
 
 	}
 

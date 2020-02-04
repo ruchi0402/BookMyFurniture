@@ -35,7 +35,7 @@ public class TestNgListeners extends TestListenerAdapter {
 	public void onTestSuccess(ITestResult result) {
 		logger = extent.createTest(result.getName()); // create new entry in the report
 		logger.log(Status.PASS, MarkupHelper.createLabel(result.getName(), ExtentColor.GREEN));
-		logger.info(result.getName() + " is displayed successfully");
+		logger.info(result.getName() + " is passed");
 		try {
 			String screenshotPath = TestUtil.takeScreenshotAtEndOfTest();
 			logger.pass("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotPath));
@@ -47,6 +47,7 @@ public class TestNgListeners extends TestListenerAdapter {
 	public void onTestFailure(ITestResult result) {
 		logger = extent.createTest(result.getName());
 		logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName(), ExtentColor.RED));
+		logger.error(result.getName() + " is failed");
 		logger.fail(result.getThrowable());
 		try {
 			String screenshotPath = TestUtil.takeScreenshotAtEndOfTest();
