@@ -5,7 +5,7 @@
 		<listener
 			class-name="reports.TestNgListeners" />
 	</listeners>
-	<test thread-count="5" name="webTests">
+	<test name="webTests">
 		<classes>
 			<class name="testcases_WebAutomation.LoginPageTest" />
 			<class name="testcases_WebAutomation.AccountPageTest" />
