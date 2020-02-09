@@ -11,10 +11,9 @@ import util.TestUtil;
 //Read Properties is reading data (browsertype and url) from config.properties file.
 public class ReadProperties {
 	public static Properties prop;
-	static Logger log = Logger.getLogger(ReadProperties.class);
+	Logger log = Logger.getLogger(ReadProperties.class);
 
-	public static void readFromPropertyFile() {
-
+	public ReadProperties() {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
