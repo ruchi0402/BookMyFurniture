@@ -24,6 +24,6 @@ compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1'
 
 test {
     useTestNG {
-         suites 'src/test/java/testNgXMFiles/apitests.xml'
+         suites 'src/test/java/testNgXMFiles/webtests.xml'
     }
 }
