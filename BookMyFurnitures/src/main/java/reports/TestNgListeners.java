@@ -3,8 +3,8 @@ package reports;
 import java.io.IOException;
 
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.TestListenerAdapter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -13,13 +13,11 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import base.BaseClass;
 import util.TestUtil;
 
-public class TestNgListeners extends TestListenerAdapter {
-	public ExtentHtmlReporter htmlReporter;
-	public ExtentReports extent;
-	public ExtentTest logger;
-
+public class TestNgListeners extends BaseClass implements ITestListener  {
+	
 	public void onStart(ITestContext testContext) {
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/WebAutomation/AutomationReport"
 				+ System.currentTimeMillis() + ".html");
@@ -38,7 +36,7 @@ public class TestNgListeners extends TestListenerAdapter {
 		logger.info(result.getName() + " is passed");
 		try {
 			String screenshotPath = TestUtil.takeScreenshotAtEndOfTest();
-			logger.pass("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotPath));
+			logger.addScreenCaptureFromPath(screenshotPath);
 		} catch (IOException e) {
 			e.getMessage();
 		}
@@ -51,7 +49,7 @@ public class TestNgListeners extends TestListenerAdapter {
 		logger.fail(result.getThrowable());
 		try {
 			String screenshotPath = TestUtil.takeScreenshotAtEndOfTest();
-			logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotPath));
+			logger.addScreenCaptureFromPath(screenshotPath);
 		} catch (IOException e) {
 			e.getMessage();
 		}
