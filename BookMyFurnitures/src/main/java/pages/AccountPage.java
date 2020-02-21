@@ -52,6 +52,6 @@ public class AccountPage extends CommonMethods {
 
 //accountSuccessful method to validate that the account is successfully created.
 	public void accountSuccessful() {
-		isDisplayed(accountSucessful, "Account is successfully created for");
+		isDisplayed(accountSucessful, "Account is successfully created");
 	}
 }

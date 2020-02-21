@@ -14,7 +14,7 @@ public class CommonMethods extends BaseClass {
 // presence of the locator/webelement using try/catch block.
 	public void click(By locator) {
 		try {
-			driver.findElement(locator).click();
+			webDriverWait(driver.findElement(locator)).click();
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			assert false;
@@ -28,6 +28,7 @@ public class CommonMethods extends BaseClass {
 			log.error(e.getMessage());
 			assert false;
 		}
+		
 	}
 
 //sendKeys method checks the presence the webelement using try/catch block and performs operation if available.
