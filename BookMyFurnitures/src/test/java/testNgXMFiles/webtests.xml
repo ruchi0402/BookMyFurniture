@@ -10,7 +10,8 @@
 			<class name="testcases_WebAutomation.LoginPageTest" />
 			<class name="testcases_WebAutomation.AccountPageTest" />
 			<class name="testcases_WebAutomation.HomePageTest" />
-			<class name="testcases_WebAutomation.PurchaseProductTest" />			
+			<class name="testcases_WebAutomation.PurchaseProductTest" />
+						
 	    </classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -19,11 +19,23 @@ public class ReadProperties {
 			FileInputStream ip = new FileInputStream(
 					System.getProperty("user.dir") + "\\src\\main\\java\\config\\config.properties");
 			prop.load(ip);
-
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
 
 	}
 
+	public String getApplicationURL()
+	{
+		String url=prop.getProperty("url");
+		return url;
+	}
+	
+	public String getBrowser()
+	{
+	String browser=prop.getProperty("browser");
+	return browser;
+	}
+	
+	
 }

@@ -26,9 +26,8 @@ public class ProductDetailPage extends CommonMethods {
 	}
 
 	public void clickBuyNow() {
-		// if(signInLink.isDisplayed()||signInLink.isEnabled())
+
 		click(buyNow);
 
-		// else System.out.println("Element not found");
 	}
 }

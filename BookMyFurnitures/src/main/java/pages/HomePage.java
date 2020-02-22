@@ -52,8 +52,7 @@ public class HomePage extends CommonMethods {
 	public void validateHomePageTitle() {
 		try {
 			if (driver.getTitle() == "Book My Furniture - QA(2.3.2)-Final")
-				;
-			log.info("Title matches");
+				log.info("Title matches");
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			assert false;
