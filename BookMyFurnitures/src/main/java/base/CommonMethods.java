@@ -1,14 +1,22 @@
 package base;
 
 import org.apache.log4j.Logger;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class CommonMethods extends BaseClass {
 
 	Logger log = Logger.getLogger(CommonMethods.class);
+	
+	
 
 //click method is overloaded with parameters locator and Webelement. Basically this method checks the 
 // presence of the locator/webelement using try/catch block.
@@ -46,8 +54,7 @@ public class CommonMethods extends BaseClass {
 		try {
 			webDriverWait(webElement).isDisplayed();
 			log.info(message);
-			
-			
+						
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			assert false;
@@ -65,5 +72,18 @@ public class CommonMethods extends BaseClass {
 		return webElement;
 
 	}
+	
+	public void validateResponse(Response response, int expStatusCode) {
 
+		int actStatusCode = response.getStatusCode();
+		try {
+			Assert.assertEquals(actStatusCode, expStatusCode);
+
+		} catch (Exception e) {
+			assert false;
+		}
+		
+	}
+	
 }
+

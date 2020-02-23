@@ -7,8 +7,8 @@
 	</listeners>
   <test name="apiTests">
    <classes>
-      <class name="testcases_RestAssured.GetAllProducts"/>
-       <class name="testcases_RestAssured.AddProduct"/>
+      <class name="testcases_RestAssured.GetAllProductsTest"/>
+       <class name="testcases_RestAssured.AddProductTest"/>
     </classes>
   </test> <!-- apiTests -->
 </suite> <!-- ApiSuite -->
