@@ -33,7 +33,7 @@ public class RequestClass extends CommonMethods {
 		request.header("Content-Type", "application/json");
 		request.body(requestParams.toJSONString());
 		Response response = request.post(CommonConstant.postURL);
-		validateResponse(response, 201);
+		validateResponse(response, 200);
 		
 	}
 	
