@@ -1,6 +1,5 @@
 package testcases_RestAssured;
 
-import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import requests.RequestClass;
