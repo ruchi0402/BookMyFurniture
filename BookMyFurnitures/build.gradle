@@ -23,8 +23,7 @@ compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1'
 }
 
 test {
-    ext.testFile = System.getProperty('Test_Plan') ?: 'webtests.xml
-    useTestNG {
-         suites 'src/test/java/testNgXMFiles/$testFile'
+      useTestNG {
+         suites 'src/test/java/testNgXMFiles/apitests.xml'
     }
 }
