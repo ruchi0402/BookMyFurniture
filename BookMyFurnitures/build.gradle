@@ -23,12 +23,7 @@ compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1'
 }
 
 test {
-<<<<<<< HEAD
-    useTestNG {
-         suites 'src/test/java/testNgXMFiles/webtests.xml'
-=======
       useTestNG {
          suites 'src/test/java/testNgXMFiles/apitests.xml'
->>>>>>> branch 'master' of https://github.com/ruchi0402/BookMyFurniture.git
     }
 }
