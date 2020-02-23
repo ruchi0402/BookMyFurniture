@@ -15,6 +15,7 @@ public class BaseTest_Web extends CommonMethods {
 	@BeforeMethod
 	public void setup() {
 		instatiateBrowser();
+		
 	}
 
 	@AfterMethod

@@ -1,5 +1,7 @@
 package testcases_WebAutomation;
 
+import java.awt.AWTException;
+
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -9,7 +11,7 @@ public class HomePageTest extends BaseTest_Web {
 	Logger log = Logger.getLogger(HomePageTest.class);
 
 	@Test(priority = 1)
-	public void validateHomePageTitleTest() {
+	public void validateHomePageTitleTest() throws AWTException {
 		log.info("******************Starting validateHomePageTitleTest****************");
 		HomePage homePage = new HomePage();
 		homePage.validateHomePageTitle();

@@ -1,16 +1,21 @@
 package base;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.apache.log4j.Logger;
-import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
+import pages.HomePage;
 
 public class CommonMethods extends BaseClass {
 
@@ -85,5 +90,21 @@ public class CommonMethods extends BaseClass {
 		
 	}
 	
+		public void switchToTab() throws AWTException {
+			Robot robot = new Robot();                          
+			robot.keyPress(KeyEvent.VK_CONTROL); 
+			robot.keyPress(KeyEvent.VK_T); 
+			robot.keyRelease(KeyEvent.VK_CONTROL); 
+			robot.keyRelease(KeyEvent.VK_T);	
+			//Switch focus to new tab
+			ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+			driver.switchTo().window(tabs.get(1));	
+			driver.switchTo().window(tabs.get(0));	
+			driver.quit();
+		}
+		
+		
 }
+	
+
 

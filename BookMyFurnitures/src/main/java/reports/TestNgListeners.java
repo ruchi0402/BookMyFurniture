@@ -6,13 +6,9 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
 import base.BaseClass;
 import util.TestUtil;
 
@@ -42,6 +38,7 @@ public class TestNgListeners extends BaseClass implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult result) {
+		
 		logger = extent.createTest(result.getName());
 		logger.log(Status.FAIL, result.getName() + " is failed");
 		logger.fail(result.getThrowable());
