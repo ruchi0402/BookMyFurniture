@@ -15,7 +15,7 @@ public class TestNgListenersWeb extends DriverClass implements ITestListener {
 
 	public void onStart(ITestContext testContext) {
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")
-				+ "/test-output/WebAutomation/AutomationReport" + System.currentTimeMillis() + ".html");
+				+ "/test-output/WebAutomation/WebAutomationReport" + System.currentTimeMillis() + ".html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Environment", "QA");

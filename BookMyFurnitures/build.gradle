@@ -23,9 +23,8 @@ compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1'
 }
 
 test {
-
       useTestNG {
-        useDefaultListeners = true
-         suites 'src/test/java/testNgXMFiles/apitests.xml'
+      useDefaultListeners = true
+      suites 'src/test/java/testNgXMFiles/apitests.xml'
     }
 }
