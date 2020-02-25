@@ -17,7 +17,7 @@ public class TestNgListenersApi extends TestListenerAdapter {
 
 	public void onStart(ITestContext testContext) {
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")
-				+ "\\src\\test\\java\\reports\\ApiAutomationReport" + System.currentTimeMillis() + ".html");
+				+ "/test-output/RestApiAutomation/RestApiAutomationReport" + System.currentTimeMillis() + ".html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Environment", "QA");
