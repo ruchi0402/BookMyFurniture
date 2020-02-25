@@ -1,4 +1,4 @@
-package testcases_WebAutomation;
+package testcaseswebautomation;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -8,7 +8,7 @@ import pages.LoginPage;
 import util.TestUtil;
 import org.apache.log4j.Logger;
 
-public class AccountPageTest extends BaseTest_Web {
+public class AccountPageTest extends BaseTestWeb {
 
 	String sheetName = "AccountData";
 	Logger log = Logger.getLogger(AccountPageTest.class);

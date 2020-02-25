@@ -25,17 +25,14 @@ public class ReadProperties {
 
 	}
 
-	public String getApplicationURL()
-	{
-		String url=prop.getProperty("url");
+	public String getApplicationURL() {
+		String url = prop.getProperty("url");
 		return url;
 	}
-	
-	public String getBrowser()
-	{
-	String browser=prop.getProperty("browser");
-	return browser;
+
+	public String getBrowser() {
+		String browser = prop.getProperty("browser");
+		return browser;
 	}
-	
-	
+
 }

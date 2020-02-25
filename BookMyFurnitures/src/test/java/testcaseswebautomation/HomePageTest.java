@@ -1,4 +1,4 @@
-package testcases_WebAutomation;
+package testcaseswebautomation;
 
 import java.awt.AWTException;
 
@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-public class HomePageTest extends BaseTest_Web {
+public class HomePageTest extends BaseTestWeb {
 
 	Logger log = Logger.getLogger(HomePageTest.class);
 

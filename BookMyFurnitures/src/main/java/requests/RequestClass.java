@@ -12,11 +12,10 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class RequestClass extends CommonMethods {
-	
+
 	@SuppressWarnings("unchecked")
-	public void postRequest(String availability, String categoryId, String color, String created,
-			String description, String discount, String material, String name, String price, String updateOn,
-			String warranty) {
+	public void postRequest(String availability, String categoryId, String color, String created, String description,
+			String discount, String material, String name, String price, String updateOn, String warranty) {
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		requestParams.put("availability", availability);
@@ -34,18 +33,14 @@ public class RequestClass extends CommonMethods {
 		request.body(requestParams.toJSONString());
 		Response response = request.post(CommonConstant.postURL);
 		validateResponse(response, 200);
-		
+
 	}
-	
-	public void getRequest()
-	{
+
+	public void getRequest() {
 		RequestSpecification request = RestAssured.given();
 		Response response = request.get(CommonConstant.getURL);
 		validateResponse(response, 201);
-		
+
 	}
-	
-	
-	
 
 }

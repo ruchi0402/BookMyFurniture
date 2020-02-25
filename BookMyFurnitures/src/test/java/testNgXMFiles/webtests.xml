@@ -7,10 +7,10 @@
 	</listeners>
 	<test name="webTests">
 		<classes>
-			<class name="testcases_WebAutomation.HomePageTest" />
-			<class name="testcases_WebAutomation.LoginPageTest" />
-			<class name="testcases_WebAutomation.AccountPageTest" />
-			<class name="testcases_WebAutomation.PurchaseProductTest" />
+			<class name="testcaseswebautomation.HomePageTest" />
+			<class name="testcaseswebautomation.LoginPageTest" />
+			<class name="testcaseswebautomation.AccountPageTest" />
+			<class name="testcaseswebautomation.PurchaseProductTest" />
 						
 	    </classes>
 	</test> <!-- Test -->

@@ -9,10 +9,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import base.BaseClass;
+import base.DriverClass;
 import util.TestUtil;
 
-public class TestNgListeners extends BaseClass implements ITestListener {
+public class TestNgListeners extends DriverClass implements ITestListener {
 
 	public void onStart(ITestContext testContext) {
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")
@@ -38,7 +38,7 @@ public class TestNgListeners extends BaseClass implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult result) {
-		
+
 		logger = extent.createTest(result.getName());
 		logger.log(Status.FAIL, result.getName() + " is failed");
 		logger.fail(result.getThrowable());

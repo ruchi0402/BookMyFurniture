@@ -1,4 +1,4 @@
-package testcases_WebAutomation;
+package testcaseswebautomation;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.DataProvider;
@@ -12,7 +12,7 @@ import pages.ProductDetailPage;
 import pages.SelectPaymentPage;
 import util.TestUtil;
 
-public class PurchaseProductTest extends BaseTest_Web {
+public class PurchaseProductTest extends BaseTestWeb {
 
 	Logger log = Logger.getLogger(PurchaseProductTest.class);
 

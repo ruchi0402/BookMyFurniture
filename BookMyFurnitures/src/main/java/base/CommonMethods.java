@@ -17,17 +17,15 @@ import org.testng.Assert;
 import io.restassured.response.Response;
 import pages.HomePage;
 
-public class CommonMethods extends BaseClass {
+public class CommonMethods extends DriverClass {
 
 	Logger log = Logger.getLogger(CommonMethods.class);
-	
-	
 
 //click method is overloaded with parameters locator and Webelement. Basically this method checks the 
 // presence of the locator/webelement using try/catch block.
 	public void click(By locator) {
 		try {
-		webDriverWait(driver.findElement(locator)).click();
+			webDriverWait(driver.findElement(locator)).click();
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			assert false;
@@ -59,7 +57,7 @@ public class CommonMethods extends BaseClass {
 		try {
 			webDriverWait(webElement).isDisplayed();
 			log.info(message);
-						
+
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			assert false;
@@ -77,7 +75,7 @@ public class CommonMethods extends BaseClass {
 		return webElement;
 
 	}
-	
+
 	public void validateResponse(Response response, int expStatusCode) {
 
 		int actStatusCode = response.getStatusCode();
@@ -87,24 +85,19 @@ public class CommonMethods extends BaseClass {
 		} catch (Exception e) {
 			assert false;
 		}
-		
+
 	}
-	
-		public void switchToTab() throws AWTException {
-			Robot robot = new Robot();                          
-			robot.keyPress(KeyEvent.VK_CONTROL); 
-			robot.keyPress(KeyEvent.VK_T); 
-			robot.keyRelease(KeyEvent.VK_CONTROL); 
-			robot.keyRelease(KeyEvent.VK_T);	
-			//Switch focus to new tab
-			ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
-			driver.switchTo().window(tabs.get(1));	
-			driver.switchTo().window(tabs.get(0));	
-			driver.quit();
-		}
-		
-		
+
+	public void switchToTab() throws AWTException {
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_T);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_T);
+		// Switch focus to new tab
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.switchTo().window(tabs.get(0));
+		driver.quit();
+	}
 }
-	
-
-
