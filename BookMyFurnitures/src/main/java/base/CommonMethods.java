@@ -4,18 +4,13 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.Set;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import io.restassured.response.Response;
-import pages.HomePage;
 
 public class CommonMethods extends DriverClass {
 
@@ -77,16 +72,18 @@ public class CommonMethods extends DriverClass {
 	}
 
 	public void validateResponse(Response response, int expStatusCode) {
-
 		int actStatusCode = response.getStatusCode();
 		try {
 			Assert.assertEquals(actStatusCode, expStatusCode);
-
+			log.info("Status matched");
 		} catch (Exception e) {
+			log.info(e.getMessage());
 			assert false;
 		}
-
 	}
+
+		
+
 
 	public void switchToTab() throws AWTException {
 		Robot robot = new Robot();

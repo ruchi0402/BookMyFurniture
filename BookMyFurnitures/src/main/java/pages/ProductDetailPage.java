@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import base.CommonMethods;
 
 public class ProductDetailPage extends CommonMethods {
@@ -18,11 +17,9 @@ public class ProductDetailPage extends CommonMethods {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void getProductDetail(String itemdetail) {
-		isDisplayed(
-				driver.findElement(By.xpath("//div[@class='float-left']//h1[contains(text(),'" + itemdetail + "')]")),
-				"Product Detail page is displayed");
-
+	public void getProductDetail(String itemDetail) {
+		WebElement element=driver.findElement(By.xpath("//div[@class='float-left']//h1[contains(text(),'" + itemDetail + "')]"));
+		isDisplayed(element,"Product Detail page is displayed");
 	}
 
 	public void clickBuyNow() {

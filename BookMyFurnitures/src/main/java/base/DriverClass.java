@@ -7,7 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import config.ReadProperties;
+
+import util.ReadProperties;
 
 // Base class is for driver and browser set up. It extends Read Properties class from which it is getting browser and url data.
 public class DriverClass {
@@ -20,14 +21,14 @@ public class DriverClass {
 	public String browserName = readconfig.getBrowser();
 	public String url = readconfig.getApplicationURL();
 
-	public void instatiateBrowser() {
+	public void instantiateBrowser() {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe");
+					System.getProperty("user.dir") + "\\src\\main\\resources\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("FF")) {
 			System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir") + "\\src\\main\\resources\\geckodriver.exe");
+					System.getProperty("user.dir") + "\\src\\main\\resources\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();

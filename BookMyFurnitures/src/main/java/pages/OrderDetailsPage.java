@@ -12,22 +12,22 @@ public class OrderDetailsPage extends CommonMethods {
 	private WebElement placeOrder;
 
 	@FindBy(xpath = "//span[contains(text(),'Yes')]")
-	private WebElement Yes;
+	private WebElement yes;
 
 	public OrderDetailsPage() {
 
 		PageFactory.initElements(driver, this);
 	}
 
-	public void orderDetailPage(String itemdetail) {
-		isDisplayed(driver.findElement(By.xpath("//h2[contains(text(),'" + itemdetail + "')]")),
+	public void orderDetailPage(String itemDetail) {
+		WebElement element=driver.findElement(By.xpath("//h2[contains(text(),'" + itemDetail + "')]"));
+		isDisplayed(element,
 				"order details page is displayed");
-
 	}
 
 	public void clickonPlaceOrder() {
 		click(placeOrder);
-		click(Yes);
+		click(yes);
 
 	}
 

@@ -10,7 +10,7 @@ public class BaseTestWeb extends CommonMethods {
 
 	@BeforeMethod
 	public void setup() {
-		instatiateBrowser();
+		instantiateBrowser();
 		
 	}
 

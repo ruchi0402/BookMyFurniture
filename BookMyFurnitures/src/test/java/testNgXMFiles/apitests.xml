@@ -3,7 +3,7 @@
 <suite name="ApiSuite">
 <listeners>
 		<listener
-			class-name="reports.TestNgListeners2" />
+			class-name="reports.TestNgListenersApi" />
 	</listeners>
   <test name="apiTests">
    <classes>

@@ -42,7 +42,7 @@ public class LoginPage extends CommonMethods {
 		click(signInButton);
 	}
 
-	public void getSignInPagetext() {
+	public void getSignInPageText() {
 		isDisplayed(signInpagetext, "Sign in page is displayed");
 
 	}

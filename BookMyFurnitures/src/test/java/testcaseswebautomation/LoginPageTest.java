@@ -24,7 +24,7 @@ public class LoginPageTest extends BaseTestWeb {
 		HomePage homePage = new HomePage();
 		LoginPage loginPage = new LoginPage();
 		homePage.clickSignIn();
-		loginPage.getSignInPagetext();
+		loginPage.getSignInPageText();
 
 	}
 

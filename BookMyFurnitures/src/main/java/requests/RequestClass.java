@@ -1,10 +1,6 @@
 package requests;
 
 import org.json.simple.JSONObject;
-import org.testng.Assert;
-
-import com.aventstack.extentreports.Status;
-
 import base.CommonConstant;
 import base.CommonMethods;
 import io.restassured.RestAssured;
@@ -32,14 +28,14 @@ public class RequestClass extends CommonMethods {
 		request.header("Content-Type", "application/json");
 		request.body(requestParams.toJSONString());
 		Response response = request.post(CommonConstant.postURL);
-		validateResponse(response, 200);
+		validateResponse(response, 201);
 
 	}
 
 	public void getRequest() {
 		RequestSpecification request = RestAssured.given();
 		Response response = request.get(CommonConstant.getURL);
-		validateResponse(response, 201);
+		validateResponse(response, 200);
 
 	}
 

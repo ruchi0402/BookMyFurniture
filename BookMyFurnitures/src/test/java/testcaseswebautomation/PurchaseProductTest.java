@@ -37,15 +37,15 @@ public class PurchaseProductTest extends BaseTestWeb {
 		homePage.clickSignIn();
 		loginPage.logIntoAccount(username, password);
 		loginPage.loginSuccessful();
-		logininuser.ClickOnCategory(Category);
+		logininuser.clickOnCategory(Category);
 		itemselect.itemSelectPage();
-		itemselect.ClickonProduct(Item);
+		itemselect.clickonProduct(Item);
 		productdetail.getProductDetail(Item);
 		productdetail.clickBuyNow();
 		orderdetail.orderDetailPage(Item);
 		orderdetail.clickonPlaceOrder();
 		selectpayment.verifySelectPaymentPage();
-		selectpayment.selectPaymenttype(Payment);
+		selectpayment.selectPaymentType(Payment);
 		selectpayment.clickonPlaceOrder();
 		selectpayment.OrderSuccessful();
 

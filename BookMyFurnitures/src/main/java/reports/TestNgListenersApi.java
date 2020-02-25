@@ -6,12 +6,11 @@ import org.testng.TestListenerAdapter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class TestNgListeners2 extends TestListenerAdapter {
+
+public class TestNgListenersApi extends TestListenerAdapter {
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
 	public ExtentTest logger;
@@ -31,6 +30,7 @@ public class TestNgListeners2 extends TestListenerAdapter {
 	public void onTestSuccess(ITestResult result) {
 		logger = extent.createTest(result.getName()); // create new entry in the report
 		logger.log(Status.PASS, result.getName() + " is passed");
+		
 	}
 
 	public void onTestFailure(ITestResult result) {

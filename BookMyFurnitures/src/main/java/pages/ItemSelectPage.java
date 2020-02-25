@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,7 +24,7 @@ public class ItemSelectPage extends CommonMethods {
 
 	}
 
-	public void ClickonProduct(String product) {
+	public void clickonProduct(String product) {
 		// dynamic xpath based on input from excel sheet. This is used as there are
 		// numerous products on the page and defining each of them using
 		// page object is not useful.

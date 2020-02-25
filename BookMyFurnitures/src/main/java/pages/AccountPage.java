@@ -21,7 +21,7 @@ public class AccountPage extends CommonMethods {
 	private WebElement email;
 
 	@FindBy(xpath = "//div[@class='sign-up-main']//input[@id='password']")
-	private WebElement password;
+	private WebElement pass;
 
 	@FindBy(xpath = "//button[contains(text(),'Register')]")
 	private WebElement registerButton;
@@ -42,11 +42,11 @@ public class AccountPage extends CommonMethods {
 	// creatAccount method to create new account that is fed data from testcase.
 	// This method is using custom "sendKeys" and "click" for data
 	// entry to the text boxes and submitting form respectively.
-	public void createAccount(String name, String mobile, String emailAddress, String passwrd) {
+	public void createAccount(String name, String mobile, String emailAddress, String password) {
 		sendKeys(custname, name);
 		sendKeys(mobileNo, mobile);
 		sendKeys(email, emailAddress);
-		sendKeys(password, passwrd);
+		sendKeys(pass, password);
 		click(registerButton);
 	}
 

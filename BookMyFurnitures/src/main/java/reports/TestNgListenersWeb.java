@@ -1,7 +1,6 @@
 package reports;
 
 import java.io.IOException;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -12,7 +11,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import base.DriverClass;
 import util.TestUtil;
 
-public class TestNgListeners extends DriverClass implements ITestListener {
+public class TestNgListenersWeb extends DriverClass implements ITestListener {
 
 	public void onStart(ITestContext testContext) {
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")

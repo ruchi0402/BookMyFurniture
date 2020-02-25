@@ -3,7 +3,7 @@
 <suite name="Web Application Suite">
 <listeners>
 		<listener
-			class-name="reports.TestNgListeners" />
+			class-name="reports.TestNgListenersWeb" />
 	</listeners>
 	<test name="webTests">
 		<classes>

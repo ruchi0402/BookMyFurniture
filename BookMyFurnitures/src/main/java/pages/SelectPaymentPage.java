@@ -34,12 +34,12 @@ public class SelectPaymentPage extends CommonMethods {
 		return selectPaymentText.isDisplayed();
 	}
 
-	public void selectPaymenttype(String payment) {
+	public void selectPaymentType(String payment) {
 		if (payment.equals("card")) {
 			click(creditdebitatmradiobutton);
 		} else if (payment.equals("cash")) {
 			click(cash);
-		} else if (payment.equals("cash")) {
+		} else if (payment.equals("netbanking")) {
 			click(netbanking);
 		}
 	}
